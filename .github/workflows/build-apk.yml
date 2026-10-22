@@ -8,10 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Copier index.html dans l'application
+      - name: Copier le site dans l'application
         run: |
           mkdir -p app/src/main/assets
-          cp index.html app/src/main/assets/index.html
+          cp index.html lessons.js app/src/main/assets/
+          find . -maxdepth 1 -name '*.mp3' -exec cp {} app/src/main/assets/ \;
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
