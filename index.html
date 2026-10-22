@@ -10,18 +10,25 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--gold-soft);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 button{font:inherit;cursor:pointer}
+button:disabled{opacity:.4;cursor:default}
 .app{max-width:760px;margin:auto;min-height:100vh;padding-bottom:28px}
 .hero{background:linear-gradient(135deg,#060a22,#16235a);color:var(--gold);padding:24px 20px 28px;border-radius:0 0 28px 28px;border-bottom:1px solid var(--line)}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:.2px;color:var(--gold)}
 .logo{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--gold);color:var(--ink-on-gold);font-size:20px}
+.fontbtns{display:flex;gap:6px}
+.fontbtns button{background:transparent;color:var(--gold);border:1px solid var(--gold-deep);border-radius:10px;min-width:42px;padding:7px 8px;font-weight:900}
 .eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:1.6px;color:var(--gold-muted);font-weight:800;margin-top:28px}
 h1{font-size:29px;line-height:1.12;margin:8px 0 10px;max-width:520px;color:var(--gold)}
 .hero p{margin:0;color:var(--gold-soft);line-height:1.5;font-size:14px;max-width:530px}
 main{padding:18px 16px}
-.progress-row{display:flex;align-items:center;justify-content:space-between;margin:4px 2px 14px}
+.progress-row{display:flex;align-items:center;justify-content:space-between;margin:4px 2px 14px;gap:8px}
 .section-title{font-size:18px;font-weight:850;margin:0;color:var(--gold)}
 .small{font-size:12px;color:var(--gold-muted)}
-.progress-pill{background:var(--card2);color:var(--gold);border:1px solid var(--line);padding:7px 10px;border-radius:999px;font-size:12px;font-weight:800}
+.progress-pill{background:var(--card2);color:var(--gold);border:1px solid var(--line);padding:7px 10px;border-radius:999px;font-size:12px;font-weight:800;white-space:nowrap}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+.tools input[type=search]{flex:1;min-width:150px;background:var(--card);border:1px solid var(--line);color:var(--gold);border-radius:12px;padding:11px 12px;font:inherit;font-size:14px}
+.tools input[type=search]::placeholder{color:var(--gold-muted)}
 .filters{display:flex;gap:8px;overflow:auto;padding:0 0 14px}
 .filter{border:1px solid var(--line);background:var(--card);color:var(--gold-soft);padding:8px 14px;border-radius:999px;font-weight:750;font-size:13px;white-space:nowrap}
 .filter.active{background:var(--gold);border-color:var(--gold);color:var(--ink-on-gold)}
@@ -29,6 +36,8 @@ main{padding:18px 16px}
 .lesson-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;display:grid;grid-template-columns:48px 1fr;gap:12px;box-shadow:0 3px 12px #00000040}
 .lesson-icon{height:48px;width:48px;border-radius:15px;display:grid;place-items:center;background:var(--card2);font-size:23px}
 .lesson-top{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.fav{margin-left:auto;background:transparent;border:0;color:var(--gold-muted);font-size:22px;line-height:1;padding:2px 4px}
+.fav.on{color:var(--gold)}
 .level{font-size:10px;font-weight:900;letter-spacing:.6px;border-radius:6px;padding:4px 7px;background:var(--gold);color:var(--ink-on-gold)}
 .duration{font-size:11px;color:var(--gold-muted)}
 .lesson-card h3{margin:7px 0 4px;font-size:16px;color:var(--gold)}
@@ -54,10 +63,23 @@ main{padding:18px 16px}
 .speed-row{display:flex;align-items:center;gap:8px;margin-top:14px;color:var(--gold-soft);font-size:12px}
 .speed-row input[type=range]{flex:1;height:30px;accent-color:var(--gold)}
 .speed-val{min-width:52px;text-align:right;font-weight:800;font-size:13px;color:var(--gold)}
-.speed{border:1px solid var(--gold-deep);background:transparent;color:var(--gold);padding:6px 10px;border-radius:999px;font-size:12px}
-.speed.active{background:var(--gold);color:var(--ink-on-gold);border-color:var(--gold);font-weight:900}
+.sent-row{display:flex;gap:8px;margin-top:14px}
+.sent-row button{flex:1;background:transparent;color:var(--gold);border:1px solid var(--gold-deep);border-radius:12px;padding:10px 6px;font-weight:800;font-size:13px}
+.sent-row button.mid{flex:1.6;background:var(--card);}
 .transcript{display:none;background:var(--card);border:1px solid var(--gold-deep);border-radius:16px;padding:16px;line-height:1.7;font-size:15px;margin-bottom:14px;color:var(--gold-soft)}
 .transcript.show{display:block}
+.transcript .cur{background:#f2c94c33;border-radius:6px;padding:1px 3px}
+.dict-panel{display:none;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:14px}
+.dict-panel.show{display:block}
+.dict-panel p{margin:0 0 10px;font-size:13px;line-height:1.5;color:var(--gold-soft)}
+.dict-panel textarea{width:100%;min-height:78px;background:var(--bg);border:1px solid var(--line);color:var(--gold);border-radius:12px;padding:10px;font:inherit;font-size:15px;resize:vertical}
+.dict-actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.dict-actions button{flex:1;min-width:100px}
+.dict-result{margin-top:12px;font-size:14px;line-height:1.8}
+.dict-result .ok{color:var(--green);font-weight:700}
+.dict-result .miss{color:var(--red);font-weight:700;text-decoration:underline}
+.dict-result .score-line{font-weight:900;color:var(--gold);margin-bottom:4px}
+.dict-result .truth{margin-top:8px;color:var(--gold-muted);font-size:13px;line-height:1.5}
 .quiz-head{display:flex;align-items:center;justify-content:space-between;margin:20px 2px 12px}
 .question{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px}
 .question h4{font-size:15px;line-height:1.5;margin:0 0 12px;color:var(--gold)}
@@ -74,15 +96,32 @@ main{padding:18px 16px}
 .result .score{font-size:40px;font-weight:900;color:var(--gold);margin:4px 0}
 .result h3{margin:0;color:var(--gold)}
 .result p{color:var(--gold-soft);font-size:14px;line-height:1.5}
+.result-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;text-align:center}
+.stat b{display:block;font-size:26px;color:var(--gold);margin-bottom:2px}
+.stat span{font-size:12px;color:var(--gold-muted)}
+.bars{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:14px}
+.bar-row{display:flex;align-items:center;gap:10px;margin:8px 0;font-size:13px}
+.bar-row .lbl{width:34px;font-weight:900;color:var(--gold)}
+.bar-row .track{flex:1;height:12px;background:var(--bg);border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.bar-row .fill{height:100%;background:var(--gold);border-radius:999px}
+.bar-row .num{width:58px;text-align:right;color:var(--gold-soft);font-size:12px}
+.reset{width:100%;margin-top:6px}
 .footer{text-align:center;color:var(--gold-muted);font-size:11px;padding:12px 18px 24px}
-.empty{padding:22px;text-align:center;color:var(--gold-muted)}
+.empty{padding:22px;text-align:center;color:var(--gold-muted);grid-column:1/-1}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--gold);color:var(--ink-on-gold);padding:10px 16px;border-radius:999px;font-weight:800;font-size:13px;max-width:90%;text-align:center;opacity:0;pointer-events:none;transition:opacity .2s;z-index:50}
+#toast.show{opacity:1}
 @media(min-width:600px){.hero{padding:30px 28px 34px}main{padding:22px 24px}.lesson-list{grid-template-columns:1fr 1fr}.lesson-card{align-content:start}}
 </style>
 </head>
 <body>
-<div class="app">
+<div class="app" id="app">
   <header class="hero">
-    <div class="brand"><span class="logo">♫</span><span>ListenUp English</span></div>
+    <div class="hero-top">
+      <div class="brand"><span class="logo">♫</span><span>ListenUp English</span></div>
+      <div class="fontbtns"><button id="fontMinus" aria-label="Smaller text">A−</button><button id="fontPlus" aria-label="Larger text">A+</button></div>
+    </div>
     <div class="eyebrow">Listen · Understand · Improve</div>
     <h1>Train your ears.<br>Build your English.</h1>
     <p>Écoutez de courtes histoires en anglais, répondez aux questions et progressez à votre rythme.</p>
@@ -90,21 +129,29 @@ main{padding:18px 16px}
   <main>
     <section id="home" class="screen active">
       <div class="progress-row"><h2 class="section-title">Choose a listening</h2><span id="progressPill" class="progress-pill">0 lessons completed</span></div>
+      <div class="tools">
+        <input type="search" id="searchBox" placeholder="Search a lesson or topic…" aria-label="Search">
+        <button class="secondary" id="randomBtn">🎲 Random</button>
+        <button class="secondary" id="statsBtn">📊 Progress</button>
+      </div>
       <div class="filters" id="filters">
-        <button class="filter active" data-level="All">All levels</button>
-        <button class="filter" data-level="A1">A1 · Beginner</button>
-        <button class="filter" data-level="A2">A2 · Elementary</button>
-        <button class="filter" data-level="B1">B1 · Intermediate</button>
-        <button class="filter" data-level="B2">B2 · Upper-intermediate</button>
-        <button class="filter" data-level="C1">C1 · Advanced</button>
-        <button class="filter" data-level="C2">C2 · Mastery</button>
+        <button class="filter active" data-filter="All">All levels</button>
+        <button class="filter" data-filter="A1">A1 · Beginner</button>
+        <button class="filter" data-filter="A2">A2 · Elementary</button>
+        <button class="filter" data-filter="B1">B1 · Intermediate</button>
+        <button class="filter" data-filter="B2">B2 · Upper-intermediate</button>
+        <button class="filter" data-filter="C1">C1 · Advanced</button>
+        <button class="filter" data-filter="C2">C2 · Mastery</button>
+        <button class="filter" data-filter="Fav">★ Favourites</button>
+        <button class="filter" data-filter="Review">↻ To review</button>
       </div>
       <div class="lesson-list" id="lessonList"></div>
     </section>
+
     <section id="lessonScreen" class="screen">
       <button class="back" id="backBtn">← All lessons</button>
       <div class="lesson-header">
-        <div class="lesson-top"><span id="lessonLevel" class="level">A1</span><span class="duration">5–8 min</span></div>
+        <div class="lesson-top"><span id="lessonLevel" class="level">A1</span><span class="duration">5–8 min</span><button class="fav" id="lessonFav" aria-label="Favourite">★</button></div>
         <h2 id="lessonTitle"></h2><p id="lessonDescription"></p>
       </div>
       <div class="listen-card">
@@ -118,60 +165,183 @@ main{padding:18px 16px}
           <input type="range" id="speedRange" min="0.2" max="1.5" step="0.05" value="0.9" aria-label="Speech speed">
           <span class="speed-val" id="speedVal">0.90×</span>
         </div>
+        <div class="sent-row">
+          <button id="prevS">◀ Prev</button>
+          <button id="sentBtn" class="mid">🔁 <span id="sentLabel">Sentence 1 / 1</span></button>
+          <button id="nextS">Next ▶</button>
+        </div>
       </div>
       <button class="ghost" id="transcriptBtn">Show transcript +</button>
       <div class="transcript" id="transcript"></div>
+      <button class="ghost" id="dictBtn">✍️ Dictation +</button>
+      <div class="dict-panel" id="dictPanel">
+        <p>Écoutez la phrase, puis écrivez ce que vous entendez. Majuscules et ponctuation sont ignorées. <b id="dictLabel"></b></p>
+        <textarea id="dictInput" placeholder="Type the sentence here…" autocomplete="off" autocapitalize="off" spellcheck="false"></textarea>
+        <div class="dict-actions">
+          <button class="secondary" id="dictPlay">🔊 Listen</button>
+          <button class="primary" id="dictCheck">Check</button>
+          <button class="secondary" id="dictNext">Next ▶</button>
+        </div>
+        <div class="dict-result" id="dictResult"></div>
+      </div>
       <div class="quiz-head"><h3 class="section-title">Check your understanding</h3><span class="small" id="questionCount"></span></div>
       <div id="questions"></div>
       <div class="quiz-actions"><button class="primary" id="checkBtn">Check my answers</button><button class="secondary" id="retryBtn">Try again</button></div>
-      <div id="result" class="result"><h3 id="resultTitle">Good work!</h3><div class="score" id="scoreText">0/3</div><p id="resultMessage"></p><button class="primary" id="nextBtn">Back to lessons</button></div>
+      <div id="result" class="result"><h3 id="resultTitle">Good work!</h3><div class="score" id="scoreText">0/3</div><p id="resultMessage"></p>
+        <div class="result-actions"><button class="primary" id="nextLessonBtn">Next lesson →</button><button class="secondary" id="nextBtn">Back to lessons</button></div>
+      </div>
+    </section>
+
+    <section id="statsScreen" class="screen">
+      <button class="back" id="statsBack">← All lessons</button>
+      <h2 class="section-title" style="margin-bottom:12px">📊 My progress</h2>
+      <div class="stat-grid" id="statGrid"></div>
+      <div class="bars" id="statBars"></div>
+      <button class="secondary reset" id="resetBtn">Reset my progress</button>
     </section>
   </main>
   <div class="footer">Made for daily English practice · Works offline</div>
 </div>
+<div id="toast" role="status"></div>
 <script src="lessons.js"></script>
 <script>
-let activeLesson=null, selectedRate=0.9, currentLevel="All", checked=false;
-const completed = new Set(JSON.parse(localStorage.getItem("listenupCompleted")||"[]"));
-const $ = id => document.getElementById(id);
-function renderLessons(){
- const list=$("lessonList"); list.innerHTML="";
- const shown=lessons.filter(l=>currentLevel==="All"||l.level===currentLevel);
- shown.forEach(l=>{
-  const card=document.createElement("article"); card.className="lesson-card";
-  const done=completed.has(l.id);
-  card.innerHTML=`<div class="lesson-icon">${l.icon}</div><div><div class="lesson-top"><span class="level">${l.level}</span><span class="duration">${done?"✓ Completed":l.questions.length+" questions"}</span></div><h3>${l.title}</h3><p>${l.description}</p><div class="card-bottom"><span class="tag">${l.topic}</span><button class="primary">Start →</button></div></div>`;
-  card.querySelector("button").addEventListener("click",()=>openLesson(l.id)); list.appendChild(card);
- });
- $("progressPill").textContent=`${completed.size} lesson${completed.size===1?"":"s"} completed`;
+const $=id=>document.getElementById(id);
+const store={
+ get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v);}catch(e){return d;}},
+ set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+};
+const arr=k=>{const v=store.get(k,[]);return Array.isArray(v)?v:[];};
+let activeLesson=null, selectedRate=0.9, currentFilter="All", checked=false;
+let sentences=[], sIdx=0, pushed=false, screenName="home", audioEl=null, toastT=null, resetT=null;
+const completed=new Set(arr("listenupCompleted"));
+const fav=new Set(arr("listenupFav"));
+const review=new Set(arr("listenupReview"));
+let days=arr("listenupDays");
+let best=(()=>{const b=store.get("listenupBest",{});return b&&typeof b==="object"&&!Array.isArray(b)?b:{};})();
+const FONTS=[0.9,1,1.15,1.3,1.5];
+let fontIdx=Number(store.get("listenupFont",1));
+if(!(fontIdx>=0&&fontIdx<FONTS.length))fontIdx=1;
+function saveProgress(){store.set("listenupCompleted",[...completed]);store.set("listenupBest",best);store.set("listenupReview",[...review]);store.set("listenupDays",days);}
+function saveFav(){store.set("listenupFav",[...fav]);}
+
+function toast(m){const t=$("toast");t.textContent=m;t.classList.add("show");clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove("show"),2600);}
+function dayStr(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+function streak(){const set=new Set(days);const d=new Date();let n=0;if(!set.has(dayStr(d)))d.setDate(d.getDate()-1);while(set.has(dayStr(d))){n++;d.setDate(d.getDate()-1);}return n;}
+
+/* ---------- navigation ---------- */
+function showScreen(n){screenName=n;["home","lessonScreen","statsScreen"].forEach(id=>$(id).classList.toggle("active",id===n));window.scrollTo(0,0);}
+function enter(n){
+ if(screenName==="home"){try{history.pushState({s:n},"");pushed=true;}catch(e){pushed=false;}}
+ else{try{history.replaceState({s:n},"");}catch(e){}}
+ showScreen(n);
 }
+function goHome(){
+ stopAll();
+ if(pushed){
+  pushed=false;
+  try{history.back();setTimeout(()=>{if(screenName!=="home"){showScreen("home");renderLessons();}},150);return;}catch(e){}
+ }
+ showScreen("home");renderLessons();
+}
+window.addEventListener("popstate",()=>{pushed=false;stopAll();showScreen("home");renderLessons();});
+
+/* ---------- liste des leçons ---------- */
+function getShown(){
+ const q=($("searchBox").value||"").trim().toLowerCase();
+ return lessons.filter(l=>{
+  if(currentFilter==="Fav"&&!fav.has(l.id))return false;
+  if(currentFilter==="Review"&&!review.has(l.id))return false;
+  if(/^[ABC][12]$/.test(currentFilter)&&l.level!==currentFilter)return false;
+  if(q&&!(l.title+" "+l.topic+" "+l.description+" "+l.level).toLowerCase().includes(q))return false;
+  return true;
+ });
+}
+function renderLessons(){
+ const list=$("lessonList");list.innerHTML="";
+ const shown=getShown();
+ if(!shown.length){
+  const e=document.createElement("div");e.className="empty";
+  e.textContent=currentFilter==="Fav"?"No favourite yet. Tap ★ on a lesson to add it.":currentFilter==="Review"?"Nothing to review. Lessons with mistakes will appear here.":"No lesson found.";
+  list.appendChild(e);
+ }
+ shown.forEach(l=>{
+  const card=document.createElement("article");card.className="lesson-card";
+  const n=l.questions.length;
+  const status=completed.has(l.id)?"✓ Completed":(best[l.id]!=null?"Best "+best[l.id]+"/"+n:n+" questions");
+  card.innerHTML=`<div class="lesson-icon">${l.icon}</div><div><div class="lesson-top"><span class="level">${l.level}</span><span class="duration">${status}</span><button class="fav${fav.has(l.id)?" on":""}" aria-label="Favourite">★</button></div><h3>${l.title}</h3><p>${l.description}</p><div class="card-bottom"><span class="tag">${l.topic}</span><button class="primary go">Start →</button></div></div>`;
+  card.querySelector(".go").addEventListener("click",()=>openLesson(l.id));
+  card.querySelector(".fav").addEventListener("click",ev=>{
+   if(fav.has(l.id))fav.delete(l.id);else fav.add(l.id);
+   saveFav();ev.currentTarget.classList.toggle("on",fav.has(l.id));
+   if(currentFilter==="Fav")renderLessons();
+  });
+  list.appendChild(card);
+ });
+ $("progressPill").textContent=`${completed.size}/${lessons.length} completed`;
+}
+
+/* ---------- phrases ---------- */
+function splitSentences(t){
+ const m=t.match(/[^.!?]+(?:[.!?]+['"’]*|$)/g)||[t];
+ return m.map(s=>s.trim()).filter(Boolean);
+}
+function buildTranscript(){
+ const box=$("transcript");box.innerHTML="";
+ sentences.forEach((s,i)=>{
+  const sp=document.createElement("span");sp.dataset.i=i;sp.textContent=s;
+  box.appendChild(sp);
+  if(i<sentences.length-1)box.appendChild(document.createTextNode(" "));
+ });
+}
+function updateSentenceUI(){
+ const n=sentences.length;
+ $("sentLabel").textContent=`Sentence ${sIdx+1} / ${n}`;
+ $("dictLabel").textContent=`(Sentence ${sIdx+1} / ${n})`;
+ $("prevS").disabled=sIdx===0;$("nextS").disabled=sIdx>=n-1;
+ $("transcript").querySelectorAll("span").forEach(sp=>sp.classList.toggle("cur",Number(sp.dataset.i)===sIdx));
+ resetDict();
+}
+function speakSentence(){stopAll();speak(sentences[sIdx]);}
+function goSentence(delta){
+ if(!activeLesson)return;
+ sIdx=Math.min(sentences.length-1,Math.max(0,sIdx+delta));
+ updateSentenceUI();speakSentence();
+}
+
+/* ---------- leçon ---------- */
 function openLesson(id){
  stopAll();
- activeLesson=lessons.find(l=>l.id===id); checked=false;
- $("home").classList.remove("active"); $("lessonScreen").classList.add("active");
- $("lessonLevel").textContent=activeLesson.level; $("lessonTitle").textContent=activeLesson.title; $("lessonDescription").textContent=activeLesson.description;
- $("transcript").textContent=activeLesson.text; $("transcript").classList.remove("show"); $("transcriptBtn").textContent="Show transcript +";
- $("questionCount").textContent=`${activeLesson.questions.length} questions`; $("result").classList.remove("show");
+ activeLesson=lessons.find(l=>l.id===id);checked=false;
+ enter("lessonScreen");
+ $("lessonLevel").textContent=activeLesson.level;$("lessonTitle").textContent=activeLesson.title;$("lessonDescription").textContent=activeLesson.description;
+ $("lessonFav").classList.toggle("on",fav.has(id));
+ sentences=splitSentences(activeLesson.text);sIdx=0;
+ buildTranscript();
+ $("transcript").classList.remove("show");$("transcriptBtn").textContent="Show transcript +";
+ $("dictPanel").classList.remove("show");$("dictBtn").textContent="✍️ Dictation +";
+ updateSentenceUI();
+ $("questionCount").textContent=`${activeLesson.questions.length} questions`;$("result").classList.remove("show");
  $("questions").innerHTML="";
  activeLesson.questions.forEach((q,i)=>{
-  const item=document.createElement("div"); item.className="question"; item.dataset.index=i;
+  const item=document.createElement("div");item.className="question";item.dataset.index=i;
   item.innerHTML=`<h4>${i+1}. ${q.q}</h4>`+q.choices.map((c,j)=>`<label class="choice"><input type="radio" name="q${i}" value="${j}"><span>${c}</span></label>`).join("")+`<div class="feedback" hidden></div>`;
   $("questions").appendChild(item);
  });
- $("checkBtn").disabled=false; $("checkBtn").style.opacity="1";
+ $("checkBtn").disabled=false;$("checkBtn").style.opacity="1";
  window.scrollTo(0,0);
 }
+
+/* ---------- voix et audio ---------- */
 function speak(text){
  try{
   if(window.NativeSpeech){window.NativeSpeech.speak(text,selectedRate);}
   else if("speechSynthesis" in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang="en-US";u.rate=selectedRate;speechSynthesis.speak(u);}
-  else alert("La synthèse vocale n'est pas disponible sur cet appareil.");
- }catch(e){alert("La voix n'est pas disponible. Vérifiez les paramètres de synthèse vocale Android.");}
+  else toast("Voice not available on this device.");
+ }catch(e){toast("Voice not available. Check the Android text-to-speech settings.");}
 }
-let audioEl=null;
 function stopAll(){
- if(audioEl){try{audioEl.pause();}catch(e){} audioEl=null;}
- try{if(window.NativeSpeech)window.NativeSpeech.stop();else speechSynthesis.cancel();}catch(e){}
+ if(audioEl){try{audioEl.pause();}catch(e){}audioEl=null;}
+ try{if(window.NativeSpeech)window.NativeSpeech.stop();else if("speechSynthesis" in window)speechSynthesis.cancel();}catch(e){}
 }
 function playLesson(l){
  stopAll();
@@ -186,27 +356,114 @@ function playLesson(l){
  const p=a.play();
  if(p&&p.catch)p.catch(fallback);
 }
+
+/* ---------- dictée ---------- */
+function words(s){
+ return s.toLowerCase().replace(/[’]/g,"'").replace(/-/g," ").replace(/[^a-z0-9'\s]/g," ").split(/\s+/).filter(Boolean);
+}
+function resetDict(){$("dictInput").value="";$("dictResult").innerHTML="";}
+function checkDictation(){
+ if(!activeLesson)return;
+ const a=words(sentences[sIdx]),b=words($("dictInput").value);
+ if(!b.length){toast("Write what you hear first.");return;}
+ const m=a.length,n=b.length;
+ const dp=Array.from({length:m+1},()=>new Array(n+1).fill(0));
+ for(let i=m-1;i>=0;i--)for(let j=n-1;j>=0;j--)dp[i][j]=a[i]===b[j]?dp[i+1][j+1]+1:Math.max(dp[i+1][j],dp[i][j+1]);
+ const okA=new Array(m).fill(false),okB=new Array(n).fill(false);
+ let i=0,j=0;
+ while(i<m&&j<n){
+  if(a[i]===b[j]){okA[i]=true;okB[j]=true;i++;j++;}
+  else if(dp[i+1][j]>=dp[i][j+1])i++;else j++;
+ }
+ const hits=okA.filter(Boolean).length,pct=Math.round(100*hits/m);
+ const box=$("dictResult");box.innerHTML="";
+ const sc=document.createElement("div");sc.className="score-line";
+ sc.textContent=(pct===100?"Perfect! ":pct>=80?"Very good. ":"Keep practising. ")+hits+" / "+m+" words ("+pct+"%)";
+ box.appendChild(sc);
+ const line=document.createElement("div");
+ a.forEach((w,k)=>{const sp=document.createElement("span");sp.className=okA[k]?"ok":"miss";sp.textContent=w;line.appendChild(sp);line.appendChild(document.createTextNode(" "));});
+ box.appendChild(line);
+ const extra=b.filter((w,k)=>!okB[k]);
+ if(extra.length){const ex=document.createElement("div");ex.className="truth";ex.textContent="Words not matched: "+extra.join(", ");box.appendChild(ex);}
+ const tr=document.createElement("div");tr.className="truth";tr.textContent="Correct sentence: "+sentences[sIdx];box.appendChild(tr);
+}
+
+/* ---------- statistiques ---------- */
+function renderStats(){
+ const total=lessons.length,done=completed.size;
+ const attempted=lessons.filter(l=>best[l.id]!=null);
+ const avg=attempted.length?Math.round(100*attempted.reduce((s,l)=>s+best[l.id]/l.questions.length,0)/attempted.length):0;
+ const grid=$("statGrid");grid.innerHTML="";
+ [[done+"/"+total,"lessons completed"],[streak(),"day streak 🔥"],[attempted.length?avg+"%":"–","average best score"],[review.size,"lessons to review"]].forEach(([v,l])=>{
+  const d=document.createElement("div");d.className="stat";
+  const b=document.createElement("b");b.textContent=v;const s=document.createElement("span");s.textContent=l;
+  d.appendChild(b);d.appendChild(s);grid.appendChild(d);
+ });
+ const bars=$("statBars");bars.innerHTML="";
+ const h=document.createElement("div");h.className="section-title";h.style.fontSize="15px";h.textContent="By level";bars.appendChild(h);
+ ["A1","A2","B1","B2","C1","C2"].forEach(L=>{
+  const ls=lessons.filter(l=>l.level===L),d=ls.filter(l=>completed.has(l.id)).length;
+  const row=document.createElement("div");row.className="bar-row";
+  row.innerHTML=`<span class="lbl">${L}</span><span class="track"><span class="fill" style="display:block;width:${ls.length?Math.round(100*d/ls.length):0}%"></span></span><span class="num">${d} / ${ls.length}</span>`;
+  bars.appendChild(row);
+ });
+}
+function resetProgress(){
+ const b=$("resetBtn");
+ if(b.dataset.armed!=="1"){
+  b.dataset.armed="1";b.textContent="Tap again to erase all progress";
+  clearTimeout(resetT);resetT=setTimeout(()=>{b.dataset.armed="0";b.textContent="Reset my progress";},4000);
+  return;
+ }
+ clearTimeout(resetT);b.dataset.armed="0";b.textContent="Reset my progress";
+ completed.clear();review.clear();best={};days=[];saveProgress();
+ renderStats();renderLessons();toast("Progress erased.");
+}
+
+/* ---------- événements ---------- */
 $("playBtn").addEventListener("click",()=>{if(activeLesson)playLesson(activeLesson);});
 $("stopBtn").addEventListener("click",stopAll);
+$("prevS").addEventListener("click",()=>goSentence(-1));
+$("nextS").addEventListener("click",()=>goSentence(1));
+$("sentBtn").addEventListener("click",()=>{if(activeLesson)speakSentence();});
+$("dictPlay").addEventListener("click",()=>{if(activeLesson)speakSentence();});
+$("dictCheck").addEventListener("click",checkDictation);
+$("dictNext").addEventListener("click",()=>{
+ if(!activeLesson)return;
+ if(sIdx>=sentences.length-1){toast("That was the last sentence.");return;}
+ goSentence(1);
+});
+$("dictBtn").addEventListener("click",()=>{
+ const shown=$("dictPanel").classList.toggle("show");
+ $("dictBtn").textContent=shown?"✍️ Dictation −":"✍️ Dictation +";
+});
+$("transcriptBtn").addEventListener("click",()=>{
+ const shown=$("transcript").classList.toggle("show");$("transcriptBtn").textContent=shown?"Hide transcript −":"Show transcript +";
+});
+$("lessonFav").addEventListener("click",()=>{
+ if(!activeLesson)return;
+ const id=activeLesson.id;
+ if(fav.has(id))fav.delete(id);else fav.add(id);
+ saveFav();$("lessonFav").classList.toggle("on",fav.has(id));
+ toast(fav.has(id)?"Added to favourites":"Removed from favourites");
+});
 
 const speedRange=$("speedRange");
-try{const sv=parseFloat(localStorage.getItem("listenupRate"));if(sv>=0.2&&sv<=1.5)selectedRate=sv;}catch(e){}
+{const sv=parseFloat(store.get("listenupRate",0.9));if(sv>=0.2&&sv<=1.5)selectedRate=sv;}
 speedRange.value=selectedRate;
 function showRate(){$("speedVal").textContent=selectedRate.toFixed(2)+"×";}
 showRate();
 speedRange.addEventListener("input",()=>{
  selectedRate=Number(speedRange.value);showRate();
- try{localStorage.setItem("listenupRate",String(selectedRate));}catch(e){}
+ store.set("listenupRate",selectedRate);
  if(audioEl){audioEl.playbackRate=selectedRate/0.9;}
 });
-$("transcriptBtn").addEventListener("click",()=>{
- const shown=$("transcript").classList.toggle("show");$("transcriptBtn").textContent=shown?"Hide transcript −":"Show transcript +";
-});
+
 $("checkBtn").addEventListener("click",()=>{
  if(checked)return;
- let score=0, answered=0;
+ let score=0,answered=0;
  activeLesson.questions.forEach((q,i)=>{
-  const item=$("questions").querySelector(`[data-index="${i}"]`), chosen=item.querySelector("input:checked"), feedback=item.querySelector(".feedback");
+  const item=$("questions").querySelector(`[data-index="${i}"]`),chosen=item.querySelector("input:checked"),feedback=item.querySelector(".feedback");
   feedback.hidden=false;
   item.querySelectorAll(".choice").forEach((label,j)=>{
    if(j===q.answer)label.classList.add("correct");
@@ -216,18 +473,53 @@ $("checkBtn").addEventListener("click",()=>{
   else{feedback.textContent="No answer selected. "+q.why;feedback.className="feedback bad";}
  });
  checked=true;
- if(score===activeLesson.questions.length)completed.add(activeLesson.id);
- localStorage.setItem("listenupCompleted",JSON.stringify([...completed]));
- $("resultTitle").textContent=score===activeLesson.questions.length?"Excellent work!":score>=2?"Good job!":"Keep practising!";
- $("scoreText").textContent=`${score}/${activeLesson.questions.length}`;
- $("resultMessage").textContent=score===activeLesson.questions.length?"Perfect score! Try another listening to keep improving.":`You answered ${answered} question${answered===1?"":"s"}. Review the explanations, listen again, and try another lesson.`;
- $("result").classList.add("show");$("checkBtn").disabled=true;$("checkBtn").style.opacity=".55";renderLessons();
+ const n=activeLesson.questions.length,id=activeLesson.id;
+ if(score===n){completed.add(id);review.delete(id);}else{review.add(id);}
+ best[id]=Math.max(best[id]||0,score);
+ const t=dayStr(new Date());if(!days.includes(t)){days.push(t);days=days.slice(-400);}
+ saveProgress();
+ $("resultTitle").textContent=score===n?"Excellent work!":score>=2?"Good job!":"Keep practising!";
+ $("scoreText").textContent=`${score}/${n}`;
+ $("resultMessage").textContent=score===n?"Perfect score! Try another listening to keep improving.":`You answered ${answered} question${answered===1?"":"s"}. Review the explanations, listen again, and try again: this lesson is saved in “To review”.`;
+ $("nextLessonBtn").style.display=nextLessonId()?"":"none";
+ $("result").classList.add("show");$("checkBtn").disabled=true;$("checkBtn").style.opacity=".55";
  $("result").scrollIntoView({behavior:"smooth",block:"center"});
 });
+function nextLessonId(){
+ if(!activeLesson)return null;
+ let list=getShown(),i=list.findIndex(l=>l.id===activeLesson.id);
+ if(i<0){list=lessons;i=list.findIndex(l=>l.id===activeLesson.id);}
+ return list[i+1]?list[i+1].id:null;
+}
+$("nextLessonBtn").addEventListener("click",()=>{const id=nextLessonId();if(id)openLesson(id);});
 $("retryBtn").addEventListener("click",()=>{if(activeLesson)openLesson(activeLesson.id);});
-$("nextBtn").addEventListener("click",()=>{$("lessonScreen").classList.remove("active");$("home").classList.add("active");renderLessons();window.scrollTo(0,0);});
-$("backBtn").addEventListener("click",()=>{stopAll();$("lessonScreen").classList.remove("active");$("home").classList.add("active");renderLessons();window.scrollTo(0,0);});
-document.querySelectorAll(".filter").forEach(btn=>btn.addEventListener("click",()=>{currentLevel=btn.dataset.level;document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b===btn));renderLessons();}));
+$("nextBtn").addEventListener("click",goHome);
+$("backBtn").addEventListener("click",goHome);
+$("statsBack").addEventListener("click",goHome);
+$("statsBtn").addEventListener("click",()=>{stopAll();renderStats();enter("statsScreen");});
+$("resetBtn").addEventListener("click",resetProgress);
+$("randomBtn").addEventListener("click",()=>{
+ const shown=getShown();
+ if(!shown.length){toast("No lesson to pick.");return;}
+ const pool=shown.filter(l=>!completed.has(l.id));
+ const from=pool.length?pool:shown;
+ openLesson(from[Math.floor(Math.random()*from.length)].id);
+});
+$("searchBox").addEventListener("input",renderLessons);
+document.querySelectorAll(".filter").forEach(btn=>btn.addEventListener("click",()=>{
+ currentFilter=btn.dataset.filter;
+ document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b===btn));
+ renderLessons();
+}));
+function applyFont(){$("app").style.zoom=FONTS[fontIdx];}
+function changeFont(d){
+ const k=Math.min(FONTS.length-1,Math.max(0,fontIdx+d));
+ if(k===fontIdx){toast(d>0?"Largest size reached":"Smallest size reached");return;}
+ fontIdx=k;store.set("listenupFont",fontIdx);applyFont();toast("Text size "+Math.round(FONTS[fontIdx]*100)+"%");
+}
+$("fontMinus").addEventListener("click",()=>changeFont(-1));
+$("fontPlus").addEventListener("click",()=>changeFont(1));
+applyFont();
 renderLessons();
 </script>
 </body>
