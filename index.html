@@ -52,6 +52,8 @@ main{padding:18px 16px}
 .listen-main{background:var(--gold);color:var(--ink-on-gold);border:0;border-radius:12px;padding:12px 10px;font-weight:900}
 .listen-stop{background:transparent;color:var(--gold);border:1px solid var(--gold-deep);border-radius:12px;padding:11px 10px;font-weight:800}
 .speed-row{display:flex;align-items:center;gap:8px;margin-top:14px;color:var(--gold-soft);font-size:12px}
+.speed-row input[type=range]{flex:1;height:30px;accent-color:var(--gold)}
+.speed-val{min-width:52px;text-align:right;font-weight:800;font-size:13px;color:var(--gold)}
 .speed{border:1px solid var(--gold-deep);background:transparent;color:var(--gold);padding:6px 10px;border-radius:999px;font-size:12px}
 .speed.active{background:var(--gold);color:var(--ink-on-gold);border-color:var(--gold);font-weight:900}
 .transcript{display:none;background:var(--card);border:1px solid var(--gold-deep);border-radius:16px;padding:16px;line-height:1.7;font-size:15px;margin-bottom:14px;color:var(--gold-soft)}
@@ -111,9 +113,8 @@ main{padding:18px 16px}
           <button class="listen-stop" id="stopBtn">■ Stop</button>
         </div>
         <div class="speed-row"><span>Speed:</span>
-          <button class="speed" data-rate="0.72">Slow</button>
-          <button class="speed active" data-rate="0.9">Normal</button>
-          <button class="speed" data-rate="1.1">Fast</button>
+          <input type="range" id="speedRange" min="0.2" max="1.5" step="0.05" value="0.9" aria-label="Speech speed">
+          <span class="speed-val" id="speedVal">0.90×</span>
         </div>
       </div>
       <button class="ghost" id="transcriptBtn">Show transcript +</button>
@@ -186,9 +187,16 @@ function playLesson(l){
 $("playBtn").addEventListener("click",()=>{if(activeLesson)playLesson(activeLesson);});
 $("stopBtn").addEventListener("click",stopAll);
 
-document.querySelectorAll(".speed").forEach(btn=>btn.addEventListener("click",()=>{
- selectedRate=Number(btn.dataset.rate);document.querySelectorAll(".speed").forEach(b=>b.classList.toggle("active",b===btn));
-}));
+const speedRange=$("speedRange");
+try{const sv=parseFloat(localStorage.getItem("listenupRate"));if(sv>=0.2&&sv<=1.5)selectedRate=sv;}catch(e){}
+speedRange.value=selectedRate;
+function showRate(){$("speedVal").textContent=selectedRate.toFixed(2)+"×";}
+showRate();
+speedRange.addEventListener("input",()=>{
+ selectedRate=Number(speedRange.value);showRate();
+ try{localStorage.setItem("listenupRate",String(selectedRate));}catch(e){}
+ if(audioEl){audioEl.playbackRate=selectedRate/0.9;}
+});
 $("transcriptBtn").addEventListener("click",()=>{
  const shown=$("transcript").classList.toggle("show");$("transcriptBtn").textContent=shown?"Hide transcript −":"Show transcript +";
 });
