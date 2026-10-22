@@ -93,6 +93,7 @@ main{padding:18px 16px}
         <button class="filter" data-level="A1">A1 · Beginner</button>
         <button class="filter" data-level="A2">A2 · Elementary</button>
         <button class="filter" data-level="B1">B1 · Intermediate</button>
+        <button class="filter" data-level="B2">B2 · Upper-intermediate</button>
       </div>
       <div class="lesson-list" id="lessonList"></div>
     </section>
@@ -125,33 +126,8 @@ main{padding:18px 16px}
   </main>
   <div class="footer">Made for daily English practice · Works offline</div>
 </div>
+<script src="lessons.js"></script>
 <script>
-const lessons = [
- {id:"a1-morning",level:"A1",icon:"☀️",title:"A Busy Morning",topic:"Daily routine",description:"Follow Anna through her morning before work.",text:"Anna wakes up at seven o'clock every morning. She gets dressed and eats breakfast in the kitchen. She usually has bread, cheese, and a cup of tea. At eight o'clock, she leaves home and takes the bus to work. Today, she is a little late, so she walks quickly to the bus stop.",questions:[
- {q:"What time does Anna wake up?",choices:["At six o'clock","At seven o'clock","At eight o'clock"],answer:1,why:"The listening says she wakes up at seven o'clock."},
- {q:"What does Anna drink for breakfast?",choices:["Coffee","Orange juice","Tea"],answer:2,why:"She has a cup of tea with her breakfast."},
- {q:"How does Anna usually go to work?",choices:["By bus","By train","On foot"],answer:0,why:"She usually takes the bus to work."}]},
- {id:"a1-cafe",level:"A1",icon:"☕",title:"At the Café",topic:"Food and ordering",description:"Listen to a short conversation between a customer and a waiter.",text:"A customer walks into a small café and sits near the window. The waiter comes to the table and asks, 'What would you like?' The customer orders a chicken sandwich and a glass of water. She also asks for a coffee without sugar. After lunch, she pays by card and thanks the waiter.",questions:[
- {q:"Where does the customer sit?",choices:["Near the door","Near the window","Outside"],answer:1,why:"She sits near the window."},
- {q:"What does she order to eat?",choices:["A chicken sandwich","A cheese pizza","A salad"],answer:0,why:"She orders a chicken sandwich."},
- {q:"How does she pay?",choices:["With cash","By phone","By card"],answer:2,why:"The text says she pays by card."}]},
- {id:"a2-station",level:"A2",icon:"🚉",title:"Finding the Train Station",topic:"Travel and directions",description:"Sam asks a local person for directions in a new city.",text:"Sam is visiting a city for the first time. He needs to catch a train at half past ten, but he cannot find the station. He asks a woman for help. She tells him to go straight along the main street, turn left at the traffic lights, and walk past the bank. The station is opposite the large supermarket. Sam thanks her and checks the time. He has twenty minutes left.",questions:[
- {q:"Why does Sam need the station?",choices:["To meet a friend","To catch a train","To buy a ticket for a bus"],answer:1,why:"He needs to catch a train at half past ten."},
- {q:"Where should Sam turn left?",choices:["At the traffic lights","At the bank","At the supermarket"],answer:0,why:"He turns left at the traffic lights."},
- {q:"How much time does Sam have left?",choices:["Ten minutes","Fifteen minutes","Twenty minutes"],answer:2,why:"He checks the time and has twenty minutes left."}]},
- {id:"a2-rabat",level:"A2",icon:"🌿",title:"A Weekend in Rabat",topic:"Free time and places",description:"Mina describes a relaxing weekend in Morocco's capital.",text:"Last weekend, Mina visited Rabat with two friends. On Saturday morning, they walked along the river and took photos of the old town. After lunch, they visited a museum because the weather was too hot to stay outside. In the evening, they ate grilled fish at a small restaurant near the beach. Mina enjoyed the trip because it was relaxing and not too expensive.",questions:[
- {q:"Who did Mina travel with?",choices:["Her family","Two friends","Her classmates"],answer:1,why:"She visited Rabat with two friends."},
- {q:"Why did they visit a museum?",choices:["It was too hot outside","It was raining","They got lost"],answer:0,why:"They went inside because the weather was too hot."},
- {q:"What did they eat in the evening?",choices:["Couscous","Pizza","Grilled fish"],answer:2,why:"They ate grilled fish near the beach."}]},
- {id:"b1-work",level:"B1",icon:"💼",title:"A Small Change at Work",topic:"Work and communication",description:"Nadia explains how her team improved its weekly meetings.",text:"For months, Nadia's team spent almost an hour in meetings without making many decisions. People often repeated information, and important tasks were forgotten. Nadia suggested sending a short agenda before each meeting and ending with a clear list of actions, names, and deadlines. At first, a few colleagues thought this would create extra work. However, after three weeks, the meetings became shorter and everyone knew what they had to do. The team now uses the same method for project reviews.",questions:[
- {q:"What was the main problem with the meetings?",choices:["They started too early","They were long and unproductive","Nobody attended them"],answer:1,why:"They lasted almost an hour without many decisions."},
- {q:"What did Nadia suggest?",choices:["Cancelling all meetings","Hiring a new manager","Sharing an agenda and action list"],answer:2,why:"She proposed an agenda and a clear list of actions."},
- {q:"How did colleagues react after three weeks?",choices:["Meetings became shorter","The team stopped working together","Meetings became longer"],answer:0,why:"The meetings became shorter and responsibilities clearer."}]},
- {id:"b1-skill",level:"B1",icon:"📚",title:"Learning a New Skill",topic:"Learning and goals",description:"Omar talks about learning to speak English with confidence.",text:"Omar used to understand English videos quite well, but he felt nervous whenever he had to speak. Instead of studying grammar for hours, he decided to practise for fifteen minutes every day. He recorded short voice notes, listened to them, and wrote down two things to improve. He also joined an online conversation group once a week. After two months, he was still making mistakes, but he could express his ideas more easily and was no longer afraid of every pause.",questions:[
- {q:"What made Omar nervous?",choices:["Reading English books","Speaking English","Watching videos"],answer:1,why:"He understood videos but felt nervous when speaking."},
- {q:"How did he practise every day?",choices:["For fifteen minutes","For two hours","Only at weekends"],answer:0,why:"He chose to practise for fifteen minutes daily."},
- {q:"What changed after two months?",choices:["He never made mistakes","He stopped watching videos","He expressed ideas more easily"],answer:2,why:"He still made mistakes but spoke more comfortably."}]}
-];
 let activeLesson=null, selectedRate=0.9, currentLevel="All", checked=false;
 const completed = new Set(JSON.parse(localStorage.getItem("listenupCompleted")||"[]"));
 const $ = id => document.getElementById(id);
@@ -161,12 +137,13 @@ function renderLessons(){
  shown.forEach(l=>{
   const card=document.createElement("article"); card.className="lesson-card";
   const done=completed.has(l.id);
-  card.innerHTML=`<div class="lesson-icon">${l.icon}</div><div><div class="lesson-top"><span class="level">${l.level}</span><span class="duration">${done?"✓ Completed":"3 questions"}</span></div><h3>${l.title}</h3><p>${l.description}</p><div class="card-bottom"><span class="tag">${l.topic}</span><button class="primary">Start →</button></div></div>`;
+  card.innerHTML=`<div class="lesson-icon">${l.icon}</div><div><div class="lesson-top"><span class="level">${l.level}</span><span class="duration">${done?"✓ Completed":l.questions.length+" questions"}</span></div><h3>${l.title}</h3><p>${l.description}</p><div class="card-bottom"><span class="tag">${l.topic}</span><button class="primary">Start →</button></div></div>`;
   card.querySelector("button").addEventListener("click",()=>openLesson(l.id)); list.appendChild(card);
  });
  $("progressPill").textContent=`${completed.size} lesson${completed.size===1?"":"s"} completed`;
 }
 function openLesson(id){
+ stopAll();
  activeLesson=lessons.find(l=>l.id===id); checked=false;
  $("home").classList.remove("active"); $("lessonScreen").classList.add("active");
  $("lessonLevel").textContent=activeLesson.level; $("lessonTitle").textContent=activeLesson.title; $("lessonDescription").textContent=activeLesson.description;
@@ -188,8 +165,27 @@ function speak(text){
   else alert("La synthèse vocale n'est pas disponible sur cet appareil.");
  }catch(e){alert("La voix n'est pas disponible. Vérifiez les paramètres de synthèse vocale Android.");}
 }
-$("playBtn").addEventListener("click",()=>{if(activeLesson)speak(activeLesson.text);});
-$("stopBtn").addEventListener("click",()=>{try{if(window.NativeSpeech)window.NativeSpeech.stop();else speechSynthesis.cancel();}catch(e){}});
+let audioEl=null;
+function stopAll(){
+ if(audioEl){try{audioEl.pause();}catch(e){} audioEl=null;}
+ try{if(window.NativeSpeech)window.NativeSpeech.stop();else speechSynthesis.cancel();}catch(e){}
+}
+function playLesson(l){
+ stopAll();
+ let fell=false;
+ const a=new Audio(l.id+".mp3");
+ const fallback=()=>{if(fell)return;fell=true;if(audioEl===a)audioEl=null;speak(l.text);};
+ audioEl=a;
+ const r=selectedRate/0.9;
+ a.defaultPlaybackRate=r;a.playbackRate=r;
+ try{a.preservesPitch=true;}catch(e){}
+ a.addEventListener("error",fallback);
+ const p=a.play();
+ if(p&&p.catch)p.catch(fallback);
+}
+$("playBtn").addEventListener("click",()=>{if(activeLesson)playLesson(activeLesson);});
+$("stopBtn").addEventListener("click",stopAll);
+
 document.querySelectorAll(".speed").forEach(btn=>btn.addEventListener("click",()=>{
  selectedRate=Number(btn.dataset.rate);document.querySelectorAll(".speed").forEach(b=>b.classList.toggle("active",b===btn));
 }));
@@ -220,7 +216,7 @@ $("checkBtn").addEventListener("click",()=>{
 });
 $("retryBtn").addEventListener("click",()=>{if(activeLesson)openLesson(activeLesson.id);});
 $("nextBtn").addEventListener("click",()=>{$("lessonScreen").classList.remove("active");$("home").classList.add("active");renderLessons();window.scrollTo(0,0);});
-$("backBtn").addEventListener("click",()=>{try{if(window.NativeSpeech)window.NativeSpeech.stop();else speechSynthesis.cancel();}catch(e){}$("lessonScreen").classList.remove("active");$("home").classList.add("active");renderLessons();window.scrollTo(0,0);});
+$("backBtn").addEventListener("click",()=>{stopAll();$("lessonScreen").classList.remove("active");$("home").classList.add("active");renderLessons();window.scrollTo(0,0);});
 document.querySelectorAll(".filter").forEach(btn=>btn.addEventListener("click",()=>{currentLevel=btn.dataset.level;document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b===btn));renderLessons();}));
 renderLessons();
 </script>
