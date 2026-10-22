@@ -225,6 +225,250 @@ L("b2-heritage","B2","🧱","Restoring an Old Medina House","Heritage and archit
 "An architect describes the restoration of an old house in the medina. When the workers removed a concrete floor, they discovered the original decorative tiles underneath, which changed the plan completely. Modern materials would have been cheaper, but they would not have lasted as long, so the team chose traditional lime plaster. The project took fourteen months, about twenty per cent longer than planned, mainly because skilled craftsmen were hard to find.",[
 Q("What did the workers find under the concrete floor?",["Old coins","The original tiles","A hidden room"],1,"They discovered the original decorative tiles."),
 Q("Why did they choose traditional lime plaster?",["Modern materials would not have lasted as long","It was the cheapest option","The owner insisted on it"],0,"Modern materials were cheaper but would not last as long."),
-Q("Why was the project delayed?",["Bad weather","A lack of money","Skilled craftsmen were hard to find"],2,"The delay was mainly due to the difficulty of finding skilled craftsmen.")])
+Q("Why was the project delayed?",["Bad weather","A lack of money","Skilled craftsmen were hard to find"],2,"The delay was mainly due to the difficulty of finding skilled craftsmen.")]),
+
+/* ================= A1 (suite) ================= */
+L("a1-bakery","A1","🥖","At the Bakery","Shopping","Hamza buys his breakfast before school.",
+"Hamza goes to the bakery every morning before school. He buys two loaves of bread and a croissant. The baker, Mr Alami, always says good morning with a big smile. The bread costs three dirhams and the croissant costs four dirhams. Hamza eats the croissant on his way to school.",[
+Q("When does Hamza go to the bakery?",["After school","Before school","On Sunday only"],1,"He goes every morning before school."),
+Q("What does he buy?",["Two loaves of bread and a croissant","A cake and a juice","Only a croissant"],0,"He buys two loaves of bread and a croissant."),
+Q("How much is the croissant?",["Two dirhams","Three dirhams","Four dirhams"],2,"The croissant costs four dirhams.")]),
+
+L("a1-wakeup","A1","⏰","What Time Is It?","Time","Lina does not hear her alarm.",
+"It is half past seven in the morning. Lina is still in bed. Her alarm rings, but she does not hear it. At eight o'clock, her mother opens the door and says, 'Wake up! You are late!' Lina jumps out of bed and runs to the bathroom.",[
+Q("What time is it at the beginning?",["Half past seven","Eight o'clock","A quarter to seven"],0,"It is half past seven in the morning."),
+Q("Who wakes Lina up?",["Her brother","Her mother","Her alarm"],1,"Her mother opens the door and wakes her."),
+Q("What does Lina do at the end?",["She goes back to sleep","She eats breakfast","She runs to the bathroom"],2,"She jumps out of bed and runs to the bathroom.")]),
+
+L("a1-dress","A1","👗","Choosing a Dress","Clothes","Maya looks for a dress for a wedding.",
+"Maya wants to buy a new dress for her cousin's wedding. In the shop, she sees a green dress and a blue dress. The green one is too long. The blue one is perfect, but it is expensive. The seller offers a ten per cent discount, so Maya buys the blue dress.",[
+Q("Why does Maya want a new dress?",["For a birthday","For her cousin's wedding","For a job interview"],1,"The dress is for her cousin's wedding."),
+Q("What is wrong with the green dress?",["It is too long","It is too small","It is too dark"],0,"The green dress is too long."),
+Q("Which dress does she buy?",["The green one","The red one","The blue one"],2,"She buys the blue dress.")]),
+
+L("a1-bus","A1","🚌","Taking the Bus","Transport","Omar goes to university by bus.",
+"Omar waits at the bus stop at seven forty. Bus number twelve arrives five minutes late. The bus is full, so he stands near the door. The ticket costs five dirhams. He gets off at the university, three stops later.",[
+Q("Which bus does Omar take?",["Number two","Number twelve","Number twenty"],1,"He takes bus number twelve."),
+Q("Why does he stand?",["The bus is full","He likes standing","The seats are dirty"],0,"The bus is full."),
+Q("How many stops are there before the university?",["One","Two","Three"],2,"He gets off three stops later.")]),
+
+L("a1-dog","A1","🐕","My Dog","Pets","A boy describes his dog.",
+"I have a big brown dog. His name is Max. He is two years old and he loves running in the park. Every morning, I take him for a walk before breakfast. In the afternoon, he sleeps under the table. Max does not like baths, but he loves my little brother.",[
+Q("What colour is Max?",["Black","White","Brown"],2,"Max is a big brown dog."),
+Q("When does the boy walk the dog?",["Before breakfast","After dinner","At night"],0,"He walks him every morning before breakfast."),
+Q("What does Max not like?",["Walks","Baths","Parks"],1,"Max does not like baths.")]),
+
+L("a1-birthday","A1","🎂","A Birthday Party","Celebrations","Ines celebrates her ninth birthday.",
+"Today is Ines's birthday. She is nine years old. Her mother makes a chocolate cake, and her friends bring presents. They play games in the garden and sing 'Happy Birthday'. Ines receives a book, a puzzle, and a pink scarf. She says, 'This is the best day of my life!'",[
+Q("How old is Ines?",["Seven","Eight","Nine"],2,"Ines is nine years old."),
+Q("What kind of cake does her mother make?",["Chocolate","Strawberry","Lemon"],0,"Her mother makes a chocolate cake."),
+Q("Which present does Ines receive?",["A bicycle","A pink scarf","A watch"],1,"She receives a book, a puzzle, and a pink scarf.")]),
+
+L("a1-pizza","A1","🍕","Ordering Pizza","Phone calls","Adil orders dinner by phone.",
+"Adil calls a pizza restaurant. He orders two large pizzas: one with cheese and one with chicken. He also orders a bottle of orange juice. The address is number fifteen, Hassan II Street. The pizza will arrive in thirty minutes.",[
+Q("How many pizzas does Adil order?",["One","Two","Three"],1,"He orders two large pizzas."),
+Q("What drink does he order?",["Orange juice","Water","Cola"],0,"He orders a bottle of orange juice."),
+Q("When will the pizza arrive?",["In ten minutes","In an hour","In thirty minutes"],2,"It will arrive in thirty minutes.")]),
+
+L("a1-park","A1","🌳","A Walk in the Park","Weekend","Dina spends Sunday with her grandfather.",
+"On Sunday, Dina and her grandfather go to the park. The weather is nice, and there are many people. Children play near the lake, and some men play chess under a tree. Dina's grandfather buys her an ice cream. They sit on a bench and watch the ducks.",[
+Q("Who goes to the park?",["Dina and her mother","Dina and her grandfather","Dina and her teacher"],1,"Dina goes with her grandfather."),
+Q("What do the men do under the tree?",["They play chess","They read newspapers","They sleep"],0,"Some men play chess under a tree."),
+Q("What does the grandfather buy?",["A balloon","A drink","An ice cream"],2,"He buys her an ice cream.")]),
+
+L("a1-library","A1","📖","At the Library","School and books","Sami borrows a book about animals.",
+"Sami goes to the library after school. He wants a book about animals. The librarian shows him the right shelf. Sami can borrow the book for two weeks. He must bring it back before the twentieth of the month. He signs a card and puts the book in his bag.",[
+Q("What kind of book does Sami want?",["A book about animals","A book about cooking","A book about football"],0,"He wants a book about animals."),
+Q("How long can he keep the book?",["One week","Two weeks","One month"],1,"He can borrow it for two weeks."),
+Q("What does he do before leaving?",["He pays money","He takes a photo","He signs a card"],2,"He signs a card and puts the book in his bag.")]),
+
+L("a1-groceries","A1","🛒","Shopping List","Food","Rania does her shopping at the supermarket.",
+"Rania writes a shopping list: milk, eggs, rice, and apples. At the supermarket, she finds everything easily, but the eggs are very expensive today. She buys only six eggs instead of twelve. At the checkout, she pays and puts everything in her own bag.",[
+Q("What is expensive today?",["The milk","The eggs","The rice"],1,"The eggs are very expensive today."),
+Q("How many eggs does she buy?",["Six","Twelve","Four"],0,"She buys only six eggs."),
+Q("Where does she put her shopping?",["In a plastic bag","In a box","In her own bag"],2,"She puts everything in her own bag.")]),
+
+/* ================= A2 (suite) ================= */
+L("a2-ticket","A2","🎫","Buying a Train Ticket","Travel","Hamid buys a ticket to Marrakech.",
+"At the ticket office, Hamid asks for a return ticket to Marrakech for Friday. The clerk says the train leaves at ten past nine and arrives at one o'clock. A second-class ticket costs two hundred and ten dirhams. Hamid prefers first class because he wants to work on the way, but it is too expensive, so he buys the second-class ticket.",[
+Q("Which day does Hamid want to travel?",["Thursday","Saturday","Friday"],2,"He asks for a ticket for Friday."),
+Q("What time does the train arrive?",["At one o'clock","At nine o'clock","At ten past nine"],0,"The train arrives at one o'clock."),
+Q("Why doesn't he buy a first-class ticket?",["It is sold out","It is too expensive","The clerk refuses"],1,"First class is too expensive for him.")]),
+
+L("a2-flat","A2","🔑","Choosing a Flat","Housing","Sara looks for a flat near her university.",
+"Sara is looking for a flat near her university. She visits two flats on the same day. The first is cheap, but it is far from the tram. The second is more expensive, but it is five minutes from the university and has a washing machine. She decides to take the second one because she wants to save time every day.",[
+Q("What is the problem with the first flat?",["It is far from the tram","It is too small","It has no kitchen"],0,"The first flat is far from the tram."),
+Q("What does the second flat have?",["A garden","A washing machine","A swimming pool"],1,"The second flat has a washing machine."),
+Q("Why does Sara choose the second flat?",["It is cheaper","Her friends live nearby","To save time every day"],2,"She wants to save time every day.")]),
+
+L("a2-picnic","A2","🧺","Planning a Picnic","Plans","Four friends prepare a picnic.",
+"Four friends plan a picnic for Saturday. Nabil will bring sandwiches, Rim will bring fruit, and Yasser will bring drinks. Salma checks the weather forecast and says it might rain in the afternoon. So they decide to start earlier, at eleven o'clock, and to take a big umbrella just in case.",[
+Q("Who will bring the fruit?",["Nabil","Yasser","Rim"],2,"Rim will bring fruit."),
+Q("What is Salma worried about?",["Rain in the afternoon","Too much traffic","A lack of food"],0,"She says it might rain in the afternoon."),
+Q("What do they decide to do?",["Cancel the picnic","Start earlier, at eleven o'clock","Go on Sunday instead"],1,"They decide to start earlier, at eleven.")]),
+
+L("a2-phone-lost","A2","📱","A Lost Phone","Everyday problems","Karima looks for her phone.",
+"Karima cannot find her phone. She searches her bag, her coat, and the kitchen. Finally, she remembers that she used it in the taxi. She calls her number from her brother's phone, and a man answers. He is the taxi driver. He found it on the back seat and agrees to bring it to her office at lunchtime.",[
+Q("Where does Karima remember using her phone?",["At the office","In the taxi","In the kitchen"],1,"She remembers using it in the taxi."),
+Q("Whose phone does she use to call?",["Her brother's","Her mother's","Her friend's"],0,"She calls from her brother's phone."),
+Q("Who answers the call?",["A shop assistant","A policeman","The taxi driver"],2,"The man who answers is the taxi driver.")]),
+
+L("a2-advice","A2","🥗","A Healthy Week","Health","A doctor gives simple advice.",
+"Dr Zahra gives her patient some advice for a healthier week. He should walk for thirty minutes every day, drink at least six glasses of water, and eat fruit instead of sweets. She also asks him to come back in two weeks for another check. The patient promises to try, even though he finds it difficult to give up sweets.",[
+Q("How long should he walk every day?",["Ten minutes","Thirty minutes","One hour"],1,"He should walk for thirty minutes."),
+Q("What should he eat instead of sweets?",["Fruit","Bread","Cheese"],0,"He should eat fruit instead of sweets."),
+Q("When should he come back?",["Tomorrow","In a month","In two weeks"],2,"She asks him to come back in two weeks.")]),
+
+L("a2-match","A2","⚽","A Football Match","Sport","The local team plays its rivals.",
+"On Saturday evening, the local team played at home against their rivals. The first half was quiet, with no goals. In the second half, the home team scored twice in ten minutes. The visitors scored one goal at the end, but it was too late. The home team won two–one, and the fans celebrated in the streets.",[
+Q("Who won the match?",["The home team","The visitors","Nobody, it was a draw"],0,"The home team won two–one."),
+Q("How many goals were scored in the first half?",["One","Two","None"],2,"The first half had no goals."),
+Q("What was the final score?",["One–one","Two–one","Three–two"],1,"The final score was two–one.")]),
+
+L("a2-washing","A2","🧺","A Broken Washing Machine","Services","Mr Tazi's machine stops working.",
+"Mr Tazi's washing machine stopped working on Monday. He phoned the shop where he bought it. The employee said the machine was still under guarantee, so the repair would be free. A technician came on Wednesday morning, replaced a small part, and the machine worked again. Mr Tazi was pleased because he did not have to pay anything.",[
+Q("When did the machine stop working?",["On Monday","On Wednesday","On Sunday"],0,"It stopped working on Monday."),
+Q("Why was the repair free?",["The technician was a friend","The machine was under guarantee","It was a special offer"],1,"The machine was still under guarantee."),
+Q("When did the technician come?",["On Tuesday afternoon","On Monday evening","On Wednesday morning"],2,"The technician came on Wednesday morning.")]),
+
+L("a2-film","A2","🎬","Choosing a Film","Entertainment","Two friends cannot agree on a film.",
+"Two friends cannot agree on a film. Lamia wants a comedy because she had a difficult week. Reda prefers a thriller. They look at the times: the comedy starts at six, and the thriller at eight thirty. Lamia suggests seeing the comedy first and having dinner afterwards. Reda agrees, and they say they will see the thriller next weekend.",[
+Q("Why does Lamia want a comedy?",["She loves actors","She had a difficult week","It is shorter"],1,"She had a difficult week."),
+Q("When does the thriller start?",["At eight thirty","At six","At ten"],0,"The thriller starts at eight thirty."),
+Q("What do they decide?",["Comedy now, thriller next weekend","Thriller now, comedy next weekend","Not to go at all"],0,"They see the comedy now and the thriller next weekend.")]),
+
+L("a2-course","A2","🗣️","Joining an English Course","Study","Imane visits a language school.",
+"Imane wants to improve her English for her job. She visits a language school and meets the director. The evening course meets twice a week, on Tuesday and Thursday, from six to eight. It costs eight hundred dirhams a month. The director tells her that she must take a short test first. Imane takes the test the same day and starts the following week.",[
+Q("Why does Imane want to learn English?",["For her job","For a holiday","For her children"],0,"She wants to improve her English for her job."),
+Q("How often does the course meet?",["Every day","Once a week","Twice a week"],2,"It meets twice a week, on Tuesday and Thursday."),
+Q("What must she do first?",["Pay a year in advance","Take a short test","Buy a book"],1,"She must take a short test first.")]),
+
+L("a2-sea","A2","🏖️","A Holiday by the Sea","Holidays","The Chraibi family remembers their summer.",
+"The Chraibi family spent a week in Agadir last August. They stayed in a small apartment near the beach and went swimming every morning. In the afternoon, the children played volleyball while their parents rested under an umbrella. On the last day, they bought some souvenirs and ate fish by the sea. They want to go back next year.",[
+Q("Where did the family go?",["Tangier","Essaouira","Agadir"],2,"They spent a week in Agadir."),
+Q("What did the children do in the afternoon?",["They played volleyball","They went shopping","They slept"],0,"The children played volleyball."),
+Q("What do they want to do next year?",["Visit another country","Go back to Agadir","Stay at home"],1,"They want to go back next year.")]),
+
+/* ================= B1 (suite) ================= */
+L("b1-friend","B1","💬","Keeping in Touch","Relationships","Nawal stays close to a friend abroad.",
+"Nawal has a close friend who moved to Canada three years ago. At first, they sent messages every day, but little by little they wrote less and less. Nawal felt sad until she suggested a monthly video call. Now they talk on the first Sunday of every month. They say that having a fixed date helps them stay close, even though there is a time difference of several hours.",[
+Q("What happened to their messages over time?",["They wrote less and less","They wrote more and more","They stopped completely"],0,"Little by little they wrote less."),
+Q("What did Nawal suggest?",["A visit every year","A monthly video call","A weekly letter"],1,"She suggested a monthly video call."),
+Q("What helps them stay close?",["Long messages","Cheap flights","A fixed date"],2,"Having a fixed date helps them stay close.")]),
+
+L("b1-noise","B1","🎧","A Noisy Neighbour","Community","Hassan solves a problem politely.",
+"For several weeks, Hassan could not sleep because his upstairs neighbour played loud music late at night. At first, he said nothing. Then he wrote a polite note and left it under the neighbour's door. The next day, the neighbour knocked on his door to apologise. He had no idea that the sound travelled so much. Since then, he uses headphones after ten o'clock.",[
+Q("What was Hassan's problem?",["Loud music late at night","A barking dog","A broken lift"],0,"His neighbour played loud music late at night."),
+Q("What did Hassan do?",["He called the police","He wrote a polite note","He moved out"],1,"He wrote a polite note and left it under the door."),
+Q("What does the neighbour do now?",["He plays music in the morning","He has stopped living there","He uses headphones after ten"],2,"He uses headphones after ten o'clock.")]),
+
+L("b1-saving","B1","🪙","Saving Money","Personal finance","Kenza finds out where her money goes.",
+"Kenza wanted to buy a laptop but never had enough money at the end of the month. She decided to write down everything she spent for four weeks. She discovered that she was spending a lot on takeaway coffee and snacks. By making coffee at home and bringing lunch from home, she saved a good amount each month and bought the laptop in the spring.",[
+Q("What did Kenza do for four weeks?",["She worked extra hours","She wrote down her spending","She stopped shopping"],1,"She wrote down everything she spent."),
+Q("What did she discover?",["She spent a lot on coffee and snacks","She spent too much on clothes","She paid too much rent"],0,"She was spending a lot on takeaway coffee and snacks."),
+Q("How did she save money?",["By selling her phone","By taking the bus","By making coffee and lunch at home"],2,"She made coffee at home and brought her lunch.")]),
+
+L("b1-exam","B1","📝","Preparing for an Exam","Study skills","Amina follows a plan instead of panicking.",
+"Amina had an important exam in three weeks. Instead of studying all night just before the exam, she made a plan. Every day, she studied for ninety minutes, with short breaks, and on Sundays she tested herself with old exam papers. Two days before the exam, she only reviewed her notes and went to bed early. She felt calm during the exam and got a good mark.",[
+Q("How long did she study every day?",["Three hours","Ninety minutes","Thirty minutes"],1,"She studied for ninety minutes a day."),
+Q("What did she do on Sundays?",["She rested completely","She visited friends","She tested herself with old exam papers"],2,"She tested herself with old exam papers."),
+Q("What did she do two days before the exam?",["She reviewed her notes and slept early","She studied all night","She learned new topics"],0,"She only reviewed her notes and went to bed early.")]),
+
+L("b1-apprentice","B1","🪚","Learning a Trade","Work and careers","Brahim becomes a carpenter.",
+"Brahim left school at seventeen and became an apprentice in a carpentry workshop. The first months were hard because he only swept the floor and carried wood. Slowly, the master allowed him to use the tools. After three years, Brahim built his first wardrobe alone. Today, he has his own small workshop and teaches two young apprentices himself.",[
+Q("What did Brahim do in the first months?",["He drew plans","He swept the floor and carried wood","He sold furniture"],1,"He only swept the floor and carried wood."),
+Q("What happened after three years?",["He built his first wardrobe alone","He changed jobs","He left the workshop"],0,"He built his first wardrobe alone."),
+Q("What does he do today?",["He works for his master","He teaches at a university","He has his own workshop and teaches apprentices"],2,"He has his own workshop and teaches two apprentices.")]),
+
+L("b1-misunderstanding","B1","🍝","A Misunderstanding","Communication","A lunch plan goes wrong.",
+"Leïla invited a colleague, Karim, to lunch. She wrote, 'See you at twelve at the Italian place', but there are two Italian restaurants in the area. She waited at one, and he waited at the other for forty minutes. They finally called each other, laughed, and agreed on a third place. Since then, they always send the full address.",[
+Q("What caused the misunderstanding?",["The wrong time","The wrong day","Two Italian restaurants"],2,"There are two Italian restaurants in the area."),
+Q("How long did they wait?",["Forty minutes","Ten minutes","Two hours"],0,"They waited for forty minutes."),
+Q("What do they do now?",["They eat at the office","They send the full address","They never meet"],1,"They always send the full address.")]),
+
+L("b1-wallet","B1","👛","Honesty Pays","Values","Yassir finds a wallet.",
+"Yassir found a wallet on the pavement with some money and an identity card inside. Instead of keeping it, he took it to the nearest police station. The next day, the owner, an elderly man, came to thank him and offered him a reward. Yassir refused the money, but he accepted a cup of tea. He said that he would have wanted someone to do the same for him.",[
+Q("Where did Yassir find the wallet?",["On a bus","On the pavement","In a café"],1,"He found it on the pavement."),
+Q("What did he do with it?",["He took it to a police station","He kept it","He left it there"],0,"He took it to the nearest police station."),
+Q("What did he accept from the owner?",["Some money","A gift card","A cup of tea"],2,"He refused the money but accepted a cup of tea.")]),
+
+L("b1-bakery-business","B1","🧁","Starting a Small Business","Work and ideas","Zineb turns a hobby into a job.",
+"Zineb loved baking and sold cakes to her friends. After a few months, so many people asked for orders that she decided to open a small online shop. She spent a weekend taking photos and writing descriptions. In the first month, she received only five orders, but she kept improving her website. Six months later, she was able to leave her office job.",[
+Q("How did Zineb start?",["By selling cakes to her friends","By opening a restaurant","By teaching a course"],0,"She sold cakes to her friends first."),
+Q("How many orders did she receive in the first month?",["Fifty","Five","Fifteen"],1,"She received only five orders."),
+Q("What happened six months later?",["She closed the shop","She moved abroad","She left her office job"],2,"She was able to leave her office job.")]),
+
+L("b1-streetparty","B1","🎏","A Street Party","Community","A rainy day improves the neighbourhood party.",
+"Every June, the residents of a small street organise a party. Each family prepares a dish, and the children decorate the street with paper flags. Last year it rained, so everyone moved to the garage of an apartment building. Surprisingly, it was the best party ever, because people sat closer together and talked more. This year, they will use the garage again on purpose.",[
+Q("What does each family do?",["They bring chairs","They prepare a dish","They sing a song"],1,"Each family prepares a dish."),
+Q("What happened last year?",["It rained","A road was closed","Nobody came"],0,"Last year it rained."),
+Q("Why will they use the garage again?",["It is cheaper","It is bigger","Last year's party there went very well"],2,"It was the best party ever, so they will use it again.")]),
+
+L("b1-grandma","B1","👵","Teaching Grandma","Family and technology","Rachid teaches his grandmother video calls.",
+"Rachid decided to teach his grandmother how to use video calls. The first lesson was a disaster: she pressed the wrong button and ended the call twice. He then wrote a short guide with big letters and pictures and stuck it next to the tablet. After a week, she could call the whole family by herself. Now she calls Rachid every evening to ask what he has eaten.",[
+Q("What went wrong in the first lesson?",["She pressed the wrong button","The tablet broke","She refused to learn"],0,"She pressed the wrong button and ended the call twice."),
+Q("What did Rachid write?",["A letter to the family","A short guide with big letters","A list of phone numbers"],1,"He wrote a short guide with big letters and pictures."),
+Q("What does his grandmother do now?",["She asks him to visit","She buys a new tablet","She calls him every evening"],2,"She calls Rachid every evening.")]),
+
+/* ================= B2 (suite) ================= */
+L("b2-remote-teams","B2","🌍","Managing Remote Teams","Management","A manager explains how she leads people in three countries.",
+"A manager describes how she leads a team spread over three countries. She says the biggest mistake is to measure presence instead of results, so she sets clear goals for each month and lets people choose their working hours. She also holds a short check-in every Monday, but she avoids long meetings, because they reduce the time people have for real work. Trust, she says, is built through clarity, not control.",[
+Q("What does she see as the biggest mistake?",["Measuring presence instead of results","Hiring too quickly","Working at weekends"],0,"The biggest mistake is measuring presence instead of results."),
+Q("What does she do every Monday?",["A long meeting","A short check-in","A written exam"],1,"She holds a short check-in every Monday."),
+Q("How is trust built, according to her?",["Through strict rules","Through frequent meetings","Through clarity, not control"],2,"Trust is built through clarity, not control.")]),
+
+L("b2-risk","B2","🎲","Why Managers Avoid Risk","Decision-making","An economist explains a common bias.",
+"An economist explains why managers often avoid risky projects, even when the expected profit is high. People feel the pain of a loss more strongly than the pleasure of an equal gain, so they prefer safe options. He adds that organisations can reduce this bias by rewarding well-prepared attempts, even when they fail, rather than punishing every failure. Otherwise, employees quickly learn to propose only safe ideas.",[
+Q("Why do managers avoid risky projects?",["Profits are always low","Losses feel stronger than equal gains","They lack information"],1,"People feel the pain of a loss more strongly than an equal gain."),
+Q("How can organisations reduce this bias?",["By rewarding well-prepared attempts, even failed ones","By avoiding all new projects","By hiring more managers"],0,"They can reward well-prepared attempts even when they fail."),
+Q("What happens if every failure is punished?",["People work harder","Employees propose only safe ideas","Profits increase"],1,"Employees quickly learn to propose only safe ideas.")]),
+
+L("b2-automation","B2","🤖","Technology and Jobs","Economy and work","A specialist discusses automation and employment.",
+"A labour specialist discusses automation. Historically, new technologies have destroyed some jobs but created others, often in different places and requiring different skills. The real difficulty is the transition: workers cannot always retrain quickly, and new jobs may appear in other regions. She therefore argues that training programmes and support for mobility matter as much as the technology itself.",[
+Q("What does history show about new technologies?",["They destroy some jobs and create others","They never change employment","They only create jobs"],0,"They have destroyed some jobs but created others."),
+Q("What is the real difficulty, according to her?",["The cost of machines","The transition for workers","The lack of ideas"],1,"The difficulty is the transition: retraining and moving."),
+Q("What does she argue matters as much as technology?",["Lower taxes","Longer working hours","Training and support for mobility"],2,"Training programmes and support for mobility matter as much.")]),
+
+L("b2-water","B2","💧","Water Scarcity","Environment","A hydrologist explains how water is used.",
+"A hydrologist explains that many regions face growing water stress, not only because of lower rainfall, but also because of how water is used. Agriculture takes the largest share, and old irrigation methods lose much water through evaporation. Switching to drip irrigation can reduce consumption considerably, but farmers need financial support to invest in it. Without such help, even good technical solutions remain unused.",[
+Q("Which sector uses the largest share of water?",["Industry","Agriculture","Tourism"],1,"Agriculture takes the largest share."),
+Q("What is the problem with old irrigation methods?",["They lose water through evaporation","They are too modern","They need too much electricity"],0,"They lose much water through evaporation."),
+Q("What do farmers need to adopt drip irrigation?",["More land","New seeds","Financial support"],2,"They need financial support to invest in it.")]),
+
+L("b2-green","B2","🌳","Green Spaces in Cities","Urban planning","An urban planner talks about the value of parks.",
+"Urban planners increasingly recognise the value of green spaces. Beyond offering a place to relax, trees reduce summer temperatures in surrounding streets by providing shade and releasing moisture. A survey cited by the speaker suggests that residents living near parks report lower stress. However, he warns that a park can also push property prices up, forcing long-time residents to leave, so planners must think about affordability too.",[
+Q("How do trees reduce temperatures?",["By blocking the wind","By providing shade and releasing moisture","By absorbing noise"],1,"They provide shade and release moisture."),
+Q("What do residents near parks report?",["Lower stress","More traffic","Higher rents only"],0,"They report lower stress."),
+Q("What risk does the speaker mention?",["Parks attract too many birds","Parks reduce safety","Rising prices may force residents to leave"],2,"A park can push property prices up and force long-time residents out.")]),
+
+L("b2-memory","B2","🧠","How We Remember","Psychology and learning","A psychologist explains better ways to study.",
+"A psychologist explains why re-reading notes is a weak way to learn. It creates a feeling of familiarity, which we mistake for real knowledge. A better method is retrieval practice: closing the book and trying to recall what you have read, then checking your answers. Spacing the sessions over several days also helps, because the effort of remembering strengthens memory. She admits that it feels harder, but that difficulty is precisely what makes it effective.",[
+Q("Why is re-reading a weak method?",["It takes too long","It gives a false feeling of knowing","It is boring"],1,"It creates familiarity, which we mistake for knowledge."),
+Q("What is retrieval practice?",["Trying to recall without looking at the notes","Copying the text by hand","Reading aloud"],0,"It means closing the book and trying to recall."),
+Q("Why is it effective even though it feels harder?",["It saves time","It is more enjoyable","The effort strengthens memory"],2,"The effort of remembering strengthens memory.")]),
+
+L("b2-failure","B2","📉","Learning from Failure","Entrepreneurship","An entrepreneur talks about her first company.",
+"An entrepreneur talks about the failure of her first company. The team had built a product that nobody wanted because they never asked customers what they needed. After losing most of their savings, she decided that every future project would begin with twenty interviews with potential users. Her second company was smaller, but it survived, and she says that failing earlier would have saved her a lot of money.",[
+Q("Why did the first company fail?",["It had no money at the start","It built a product nobody wanted","It had too many employees"],1,"They never asked customers what they needed."),
+Q("What rule did she adopt afterwards?",["Start with twenty interviews with users","Never hire anyone","Only sell online"],0,"Every project begins with twenty interviews with potential users."),
+Q("What does she say would have saved her money?",["Borrowing more","Spending less on offices","Failing earlier"],2,"Failing earlier would have saved her a lot of money.")]),
+
+L("b2-translation","B2","🔤","The Art of Translation","Language and culture","A translator explains why her work is difficult.",
+"A translator describes her work as much more than replacing words. Languages organise ideas differently, so a literal translation often sounds unnatural or even changes the meaning. She spends most of her time deciding what the author wanted the reader to feel, and then finds a way to create the same effect in the other language. Humour and poetry are the hardest, she says, because they depend so heavily on sound and culture.",[
+Q("Why is literal translation a problem?",["It is too slow","It often sounds unnatural or changes the meaning","It is not allowed"],1,"It often sounds unnatural or changes the meaning."),
+Q("What does she spend most of her time on?",["Deciding what the author wanted the reader to feel","Checking spelling","Typing"],0,"She decides what the author wanted the reader to feel."),
+Q("Which texts are the hardest to translate?",["Legal texts","News reports","Humour and poetry"],2,"Humour and poetry depend heavily on sound and culture.")]),
+
+L("b2-libraries","B2","📚","Libraries in the Digital Age","Society and information","A librarian explains how libraries have changed.",
+"A librarian explains that, contrary to predictions, libraries have not disappeared with the internet. Many have changed their role: they now offer quiet workspaces, free access to digital resources, and training sessions on searching for reliable information. The librarian believes this last function is increasingly important, as people have access to vast amounts of information but often struggle to judge which sources can be trusted.",[
+Q("What has happened to libraries?",["They have all closed","They have changed their role","They have become shops"],1,"They have not disappeared; many have changed their role."),
+Q("Which function does the librarian find increasingly important?",["Selling books","Offering free coffee","Training people to find reliable information"],2,"Training on searching for reliable information."),
+Q("Why is it important?",["People struggle to judge which sources to trust","Books are too expensive","The internet is too slow"],0,"People have vast information but struggle to judge sources.")]),
+
+L("b2-tourism","B2","🧭","Sustainable Tourism","Travel and society","An expert questions how tourism success is measured.",
+"A tourism expert argues that visitor numbers alone do not measure success. Some historic towns receive so many tourists that local residents can no longer afford to live there, and the atmosphere visitors came to enjoy gradually disappears. She suggests limiting entry at the busiest sites, spreading visitors across the year, and encouraging them to spend money in local businesses rather than in large international chains.",[
+Q("What does she say about visitor numbers?",["They are the best measure of success","They alone do not measure success","They are always falling"],1,"Visitor numbers alone do not measure success."),
+Q("What problem do some historic towns face?",["Residents can no longer afford to live there","Not enough hotels","Too much rain"],0,"Residents can no longer afford to live there."),
+Q("Where should visitors spend their money, according to her?",["In international chains","At the airport","In local businesses"],2,"She encourages spending in local businesses.")])
 
 ];
