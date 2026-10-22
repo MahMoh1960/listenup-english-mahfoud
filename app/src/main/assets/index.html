@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#172554">
+<title>ListenUp English</title>
+<style>
+:root{--navy:#172554;--blue:#3563e9;--sky:#eaf1ff;--coral:#f47d6b;--ink:#172033;--muted:#667085;--bg:#f7f8fc;--white:#fff;--green:#188568;--red:#c24148;--line:#e6e9f2}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+button{font:inherit;cursor:pointer}
+.app{max-width:760px;margin:auto;min-height:100vh;padding-bottom:28px}
+.hero{background:linear-gradient(135deg,#172554,#263e86);color:white;padding:24px 20px 28px;border-radius:0 0 28px 28px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:.2px}
+.logo{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--coral);font-size:20px}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:1.6px;color:#b9cbff;font-weight:800;margin-top:28px}
+h1{font-size:29px;line-height:1.12;margin:8px 0 10px;max-width:520px}
+.hero p{margin:0;color:#e0e8ff;line-height:1.5;font-size:14px;max-width:530px}
+main{padding:18px 16px}
+.progress-row{display:flex;align-items:center;justify-content:space-between;margin:4px 2px 14px}
+.section-title{font-size:18px;font-weight:850;margin:0}
+.small{font-size:12px;color:var(--muted)}
+.progress-pill{background:#e4eaff;color:#2948a1;padding:7px 10px;border-radius:999px;font-size:12px;font-weight:800}
+.filters{display:flex;gap:8px;overflow:auto;padding:0 0 14px}
+.filter{border:1px solid var(--line);background:white;color:#566079;padding:8px 14px;border-radius:999px;font-weight:750;font-size:13px;white-space:nowrap}
+.filter.active{background:var(--navy);border-color:var(--navy);color:white}
+.lesson-list{display:grid;gap:12px}
+.lesson-card{background:white;border:1px solid var(--line);border-radius:18px;padding:16px;display:grid;grid-template-columns:48px 1fr;gap:12px;box-shadow:0 3px 12px #192b5208}
+.lesson-icon{height:48px;width:48px;border-radius:15px;display:grid;place-items:center;background:var(--sky);font-size:23px}
+.lesson-top{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.level{font-size:10px;font-weight:900;letter-spacing:.6px;border-radius:6px;padding:4px 7px;background:#fff0e9;color:#b9543f}
+.duration{font-size:11px;color:var(--muted)}
+.lesson-card h3{margin:7px 0 4px;font-size:16px}
+.lesson-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.4}
+.card-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:13px}
+.tag{font-size:11px;color:#536078}
+.primary{background:var(--blue);color:white;border:0;border-radius:12px;padding:11px 15px;font-weight:800;box-shadow:0 4px 12px #3563e922}
+.secondary{background:white;color:var(--navy);border:1px solid var(--line);border-radius:12px;padding:10px 13px;font-weight:800}
+.ghost{background:transparent;color:var(--blue);border:0;padding:10px 0;font-weight:800}
+.screen{display:none}
+.screen.active{display:block}
+.back{border:0;background:transparent;color:var(--blue);font-weight:850;padding:4px 0 16px}
+.lesson-header{background:white;border:1px solid var(--line);padding:18px;border-radius:18px;margin-bottom:14px}
+.lesson-header h2{margin:10px 0 6px;font-size:23px;line-height:1.2}
+.lesson-header p{margin:0;color:var(--muted);font-size:13px}
+.listen-card{background:var(--navy);color:white;border-radius:20px;padding:20px;margin-bottom:14px}
+.listen-card h3{margin:0 0 7px;font-size:18px}
+.listen-card p{margin:0;color:#d9e2ff;font-size:13px;line-height:1.5}
+.listen-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:17px}
+.listen-actions button{flex:1;min-width:105px}
+.listen-main{background:var(--coral);color:#1c2441;border:0;border-radius:12px;padding:12px 10px;font-weight:900}
+.listen-stop{background:#ffffff18;color:white;border:1px solid #ffffff4a;border-radius:12px;padding:11px 10px;font-weight:800}
+.speed-row{display:flex;align-items:center;gap:8px;margin-top:14px;color:#d9e2ff;font-size:12px}
+.speed{border:1px solid #6477b1;background:transparent;color:white;padding:6px 10px;border-radius:999px;font-size:12px}
+.speed.active{background:white;color:var(--navy);border-color:white;font-weight:900}
+.transcript{display:none;background:#fff9f2;border:1px solid #ffe2c9;border-radius:16px;padding:16px;line-height:1.7;font-size:15px;margin-bottom:14px}
+.transcript.show{display:block}
+.quiz-head{display:flex;align-items:center;justify-content:space-between;margin:20px 2px 12px}
+.question{background:white;border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px}
+.question h4{font-size:15px;line-height:1.5;margin:0 0 12px}
+.choice{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);padding:11px 12px;border-radius:11px;margin-top:8px;font-size:14px;line-height:1.4}
+.choice input{margin-top:3px;accent-color:var(--blue)}
+.choice.correct{border-color:#91d5bd;background:#effbf6}
+.choice.wrong{border-color:#f0a2a5;background:#fff2f2}
+.feedback{font-size:12px;font-weight:800;margin-top:9px}
+.feedback.good{color:var(--green)}.feedback.bad{color:var(--red)}
+.quiz-actions{display:flex;gap:10px;margin:16px 0}
+.quiz-actions button{flex:1}
+.result{display:none;text-align:center;background:white;border:1px solid var(--line);padding:22px;border-radius:18px;margin-top:14px}
+.result.show{display:block}
+.result .score{font-size:40px;font-weight:900;color:var(--blue);margin:4px 0}
+.result h3{margin:0}
+.result p{color:var(--muted);font-size:14px;line-height:1.5}
+.footer{text-align:center;color:#9299aa;font-size:11px;padding:12px 18px 24px}
+.empty{padding:22px;text-align:center;color:var(--muted)}
+@media(min-width:600px){.hero{padding:30px 28px 34px}main{padding:22px 24px}.lesson-list{grid-template-columns:1fr 1fr}.lesson-card{align-content:start}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="hero">
+    <div class="brand"><span class="logo">♫</span><span>ListenUp English</span></div>
+    <div class="eyebrow">Listen · Understand · Improve</div>
+    <h1>Train your ears.<br>Build your English.</h1>
+    <p>Écoutez de courtes histoires en anglais, répondez aux questions et progressez à votre rythme.</p>
+  </header>
+  <main>
+    <section id="home" class="screen active">
+      <div class="progress-row"><h2 class="section-title">Choose a listening</h2><span id="progressPill" class="progress-pill">0 lessons completed</span></div>
+      <div class="filters" id="filters">
+        <button class="filter active" data-level="All">All levels</button>
+        <button class="filter" data-level="A1">A1 · Beginner</button>
+        <button class="filter" data-level="A2">A2 · Elementary</button>
+        <button class="filter" data-level="B1">B1 · Intermediate</button>
+      </div>
+      <div class="lesson-list" id="lessonList"></div>
+    </section>
+    <section id="lessonScreen" class="screen">
+      <button class="back" id="backBtn">← All lessons</button>
+      <div class="lesson-header">
+        <div class="lesson-top"><span id="lessonLevel" class="level">A1</span><span class="duration">5–8 min</span></div>
+        <h2 id="lessonTitle"></h2><p id="lessonDescription"></p>
+      </div>
+      <div class="listen-card">
+        <h3>🎧 Listen carefully</h3>
+        <p>Écoutez d'abord sans lire le texte. Vous pouvez réécouter autant de fois que nécessaire.</p>
+        <div class="listen-actions">
+          <button class="listen-main" id="playBtn">▶ Play listening</button>
+          <button class="listen-stop" id="stopBtn">■ Stop</button>
+        </div>
+        <div class="speed-row"><span>Speed:</span>
+          <button class="speed" data-rate="0.72">Slow</button>
+          <button class="speed active" data-rate="0.9">Normal</button>
+          <button class="speed" data-rate="1.1">Fast</button>
+        </div>
+      </div>
+      <button class="ghost" id="transcriptBtn">Show transcript +</button>
+      <div class="transcript" id="transcript"></div>
+      <div class="quiz-head"><h3 class="section-title">Check your understanding</h3><span class="small" id="questionCount"></span></div>
+      <div id="questions"></div>
+      <div class="quiz-actions"><button class="primary" id="checkBtn">Check my answers</button><button class="secondary" id="retryBtn">Try again</button></div>
+      <div id="result" class="result"><h3 id="resultTitle">Good work!</h3><div class="score" id="scoreText">0/3</div><p id="resultMessage"></p><button class="primary" id="nextBtn">Back to lessons</button></div>
+    </section>
+  </main>
+  <div class="footer">Made for daily English practice · Works offline</div>
+</div>
+<script>
+const lessons = [
+ {id:"a1-morning",level:"A1",icon:"☀️",title:"A Busy Morning",topic:"Daily routine",description:"Follow Anna through her morning before work.",text:"Anna wakes up at seven o'clock every morning. She gets dressed and eats breakfast in the kitchen. She usually has bread, cheese, and a cup of tea. At eight o'clock, she leaves home and takes the bus to work. Today, she is a little late, so she walks quickly to the bus stop.",questions:[
+ {q:"What time does Anna wake up?",choices:["At six o'clock","At seven o'clock","At eight o'clock"],answer:1,why:"The listening says she wakes up at seven o'clock."},
+ {q:"What does Anna drink for breakfast?",choices:["Coffee","Orange juice","Tea"],answer:2,why:"She has a cup of tea with her breakfast."},
+ {q:"How does Anna usually go to work?",choices:["By bus","By train","On foot"],answer:0,why:"She usually takes the bus to work."}]},
+ {id:"a1-cafe",level:"A1",icon:"☕",title:"At the Café",topic:"Food and ordering",description:"Listen to a short conversation between a customer and a waiter.",text:"A customer walks into a small café and sits near the window. The waiter comes to the table and asks, 'What would you like?' The customer orders a chicken sandwich and a glass of water. She also asks for a coffee without sugar. After lunch, she pays by card and thanks the waiter.",questions:[
+ {q:"Where does the customer sit?",choices:["Near the door","Near the window","Outside"],answer:1,why:"She sits near the window."},
+ {q:"What does she order to eat?",choices:["A chicken sandwich","A cheese pizza","A salad"],answer:0,why:"She orders a chicken sandwich."},
+ {q:"How does she pay?",choices:["With cash","By phone","By card"],answer:2,why:"The text says she pays by card."}]},
+ {id:"a2-station",level:"A2",icon:"🚉",title:"Finding the Train Station",topic:"Travel and directions",description:"Sam asks a local person for directions in a new city.",text:"Sam is visiting a city for the first time. He needs to catch a train at half past ten, but he cannot find the station. He asks a woman for help. She tells him to go straight along the main street, turn left at the traffic lights, and walk past the bank. The station is opposite the large supermarket. Sam thanks her and checks the time. He has twenty minutes left.",questions:[
+ {q:"Why does Sam need the station?",choices:["To meet a friend","To catch a train","To buy a ticket for a bus"],answer:1,why:"He needs to catch a train at half past ten."},
+ {q:"Where should Sam turn left?",choices:["At the traffic lights","At the bank","At the supermarket"],answer:0,why:"He turns left at the traffic lights."},
+ {q:"How much time does Sam have left?",choices:["Ten minutes","Fifteen minutes","Twenty minutes"],answer:2,why:"He checks the time and has twenty minutes left."}]},
+ {id:"a2-rabat",level:"A2",icon:"🌿",title:"A Weekend in Rabat",topic:"Free time and places",description:"Mina describes a relaxing weekend in Morocco's capital.",text:"Last weekend, Mina visited Rabat with two friends. On Saturday morning, they walked along the river and took photos of the old town. After lunch, they visited a museum because the weather was too hot to stay outside. In the evening, they ate grilled fish at a small restaurant near the beach. Mina enjoyed the trip because it was relaxing and not too expensive.",questions:[
+ {q:"Who did Mina travel with?",choices:["Her family","Two friends","Her classmates"],answer:1,why:"She visited Rabat with two friends."},
+ {q:"Why did they visit a museum?",choices:["It was too hot outside","It was raining","They got lost"],answer:0,why:"They went inside because the weather was too hot."},
+ {q:"What did they eat in the evening?",choices:["Couscous","Pizza","Grilled fish"],answer:2,why:"They ate grilled fish near the beach."}]},
+ {id:"b1-work",level:"B1",icon:"💼",title:"A Small Change at Work",topic:"Work and communication",description:"Nadia explains how her team improved its weekly meetings.",text:"For months, Nadia's team spent almost an hour in meetings without making many decisions. People often repeated information, and important tasks were forgotten. Nadia suggested sending a short agenda before each meeting and ending with a clear list of actions, names, and deadlines. At first, a few colleagues thought this would create extra work. However, after three weeks, the meetings became shorter and everyone knew what they had to do. The team now uses the same method for project reviews.",questions:[
+ {q:"What was the main problem with the meetings?",choices:["They started too early","They were long and unproductive","Nobody attended them"],answer:1,why:"They lasted almost an hour without many decisions."},
+ {q:"What did Nadia suggest?",choices:["Cancelling all meetings","Hiring a new manager","Sharing an agenda and action list"],answer:2,why:"She proposed an agenda and a clear list of actions."},
+ {q:"How did colleagues react after three weeks?",choices:["Meetings became shorter","The team stopped working together","Meetings became longer"],answer:0,why:"The meetings became shorter and responsibilities clearer."}]},
+ {id:"b1-skill",level:"B1",icon:"📚",title:"Learning a New Skill",topic:"Learning and goals",description:"Omar talks about learning to speak English with confidence.",text:"Omar used to understand English videos quite well, but he felt nervous whenever he had to speak. Instead of studying grammar for hours, he decided to practise for fifteen minutes every day. He recorded short voice notes, listened to them, and wrote down two things to improve. He also joined an online conversation group once a week. After two months, he was still making mistakes, but he could express his ideas more easily and was no longer afraid of every pause.",questions:[
+ {q:"What made Omar nervous?",choices:["Reading English books","Speaking English","Watching videos"],answer:1,why:"He understood videos but felt nervous when speaking."},
+ {q:"How did he practise every day?",choices:["For fifteen minutes","For two hours","Only at weekends"],answer:0,why:"He chose to practise for fifteen minutes daily."},
+ {q:"What changed after two months?",choices:["He never made mistakes","He stopped watching videos","He expressed ideas more easily"],answer:2,why:"He still made mistakes but spoke more comfortably."}]}
+];
+let activeLesson=null, selectedRate=0.9, currentLevel="All", checked=false;
+const completed = new Set(JSON.parse(localStorage.getItem("listenupCompleted")||"[]"));
+const $ = id => document.getElementById(id);
+function renderLessons(){
+ const list=$("lessonList"); list.innerHTML="";
+ const shown=lessons.filter(l=>currentLevel==="All"||l.level===currentLevel);
+ shown.forEach(l=>{
+  const card=document.createElement("article"); card.className="lesson-card";
+  const done=completed.has(l.id);
+  card.innerHTML=`<div class="lesson-icon">${l.icon}</div><div><div class="lesson-top"><span class="level">${l.level}</span><span class="duration">${done?"✓ Completed":"3 questions"}</span></div><h3>${l.title}</h3><p>${l.description}</p><div class="card-bottom"><span class="tag">${l.topic}</span><button class="primary">Start →</button></div></div>`;
+  card.querySelector("button").addEventListener("click",()=>openLesson(l.id)); list.appendChild(card);
+ });
+ $("progressPill").textContent=`${completed.size} lesson${completed.size===1?"":"s"} completed`;
+}
+function openLesson(id){
+ activeLesson=lessons.find(l=>l.id===id); checked=false;
+ $("home").classList.remove("active"); $("lessonScreen").classList.add("active");
+ $("lessonLevel").textContent=activeLesson.level; $("lessonTitle").textContent=activeLesson.title; $("lessonDescription").textContent=activeLesson.description;
+ $("transcript").textContent=activeLesson.text; $("transcript").classList.remove("show"); $("transcriptBtn").textContent="Show transcript +";
+ $("questionCount").textContent=`${activeLesson.questions.length} questions`; $("result").classList.remove("show");
+ $("questions").innerHTML="";
+ activeLesson.questions.forEach((q,i)=>{
+  const item=document.createElement("div"); item.className="question"; item.dataset.index=i;
+  item.innerHTML=`<h4>${i+1}. ${q.q}</h4>`+q.choices.map((c,j)=>`<label class="choice"><input type="radio" name="q${i}" value="${j}"><span>${c}</span></label>`).join("")+`<div class="feedback" hidden></div>`;
+  $("questions").appendChild(item);
+ });
+ $("checkBtn").disabled=false; $("checkBtn").style.opacity="1";
+ window.scrollTo(0,0);
+}
+function speak(text){
+ try{
+  if(window.NativeSpeech){window.NativeSpeech.speak(text,selectedRate);}
+  else if("speechSynthesis" in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang="en-US";u.rate=selectedRate;speechSynthesis.speak(u);}
+  else alert("La synthèse vocale n'est pas disponible sur cet appareil.");
+ }catch(e){alert("La voix n'est pas disponible. Vérifiez les paramètres de synthèse vocale Android.");}
+}
+$("playBtn").addEventListener("click",()=>{if(activeLesson)speak(activeLesson.text);});
+$("stopBtn").addEventListener("click",()=>{try{if(window.NativeSpeech)window.NativeSpeech.stop();else speechSynthesis.cancel();}catch(e){}});
+document.querySelectorAll(".speed").forEach(btn=>btn.addEventListener("click",()=>{
+ selectedRate=Number(btn.dataset.rate);document.querySelectorAll(".speed").forEach(b=>b.classList.toggle("active",b===btn));
+}));
+$("transcriptBtn").addEventListener("click",()=>{
+ const shown=$("transcript").classList.toggle("show");$("transcriptBtn").textContent=shown?"Hide transcript −":"Show transcript +";
+});
+$("checkBtn").addEventListener("click",()=>{
+ if(checked)return;
+ let score=0, answered=0;
+ activeLesson.questions.forEach((q,i)=>{
+  const item=$("questions").querySelector(`[data-index="${i}"]`), chosen=item.querySelector("input:checked"), feedback=item.querySelector(".feedback");
+  feedback.hidden=false;
+  item.querySelectorAll(".choice").forEach((label,j)=>{
+   if(j===q.answer)label.classList.add("correct");
+   if(chosen&&Number(chosen.value)===j&&j!==q.answer)label.classList.add("wrong");
+  });
+  if(chosen){answered++;if(Number(chosen.value)===q.answer)score++;feedback.textContent=(Number(chosen.value)===q.answer?"Correct! ":"Not quite. ")+q.why;feedback.className="feedback "+(Number(chosen.value)===q.answer?"good":"bad");}
+  else{feedback.textContent="No answer selected. "+q.why;feedback.className="feedback bad";}
+ });
+ checked=true;
+ if(score===activeLesson.questions.length)completed.add(activeLesson.id);
+ localStorage.setItem("listenupCompleted",JSON.stringify([...completed]));
+ $("resultTitle").textContent=score===activeLesson.questions.length?"Excellent work!":score>=2?"Good job!":"Keep practising!";
+ $("scoreText").textContent=`${score}/${activeLesson.questions.length}`;
+ $("resultMessage").textContent=score===activeLesson.questions.length?"Perfect score! Try another listening to keep improving.":`You answered ${answered} question${answered===1?"":"s"}. Review the explanations, listen again, and try another lesson.`;
+ $("result").classList.add("show");$("checkBtn").disabled=true;$("checkBtn").style.opacity=".55";renderLessons();
+ $("result").scrollIntoView({behavior:"smooth",block:"center"});
+});
+$("retryBtn").addEventListener("click",()=>{if(activeLesson)openLesson(activeLesson.id);});
+$("nextBtn").addEventListener("click",()=>{$("lessonScreen").classList.remove("active");$("home").classList.add("active");renderLessons();window.scrollTo(0,0);});
+$("backBtn").addEventListener("click",()=>{try{if(window.NativeSpeech)window.NativeSpeech.stop();else speechSynthesis.cancel();}catch(e){}$("lessonScreen").classList.remove("active");$("home").classList.add("active");renderLessons();window.scrollTo(0,0);});
+document.querySelectorAll(".filter").forEach(btn=>btn.addEventListener("click",()=>{currentLevel=btn.dataset.level;document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b===btn));renderLessons();}));
+renderLessons();
+</script>
+</body>
+</html>
